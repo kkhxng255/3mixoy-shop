@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
   <title>
-   3Mixoy ร้านค้าตัวอย่าง
+   3Mixoy
   </title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Itim&family=Mali:wght@400;600;700&family=Prompt:wght@400;500;600;700&family=Pacifico&display=swap');
@@ -1050,21 +1050,7 @@ function drawContactPage(){
   async function loadQueue() {
     const queue = el('queuelist');
     if (!isAdmin) {
-      if (!activeOrder?.id || !activeOrder?.token) {
-        queue.textContent = 'กรุณาสั่งซื้อเพื่อรับเลขคิว (หากเคยสั่งซื้อ ให้เปิดจากเบราว์เซอร์และแท็บเดิม)';
-        return;
-      }
-      queue.textContent = 'กำลังโหลดข้อมูลคิว...';
-      try {
-        const result = await api('orders/' + encodeURIComponent(activeOrder.id) + '?token=' + encodeURIComponent(activeOrder.token));
-        const order = result.order;
-        queue.innerHTML = '<div class="queue"><b>คิวของคุณ: ' + escapeHtml(order.id.slice(0, 8)) + '</b>' +
-          '<p>สินค้า: ' + escapeHtml((order.items || []).join(', ')) + '</p>' +
-          '<p>สถานะ: ' + escapeHtml(order.status || 'รับรายการแล้ว') + '</p>' +
-          '<small>วันที่สั่ง: ' + escapeHtml(order.created_at ? new Date(order.created_at).toLocaleString('th-TH') : '-') + '</small></div>';
-      } catch (e) {
-        queue.textContent = 'ไม่สามารถโหลดคิวได้: ' + e.message;
-      }
+      queue.textContent = activeOrder ? 'คิวของคุณ: ' + activeOrder.id.slice(0, 8) : 'กรุณาสั่งซื้อเพื่อรับเลขคิว';
       return;
     }
     try {
@@ -1075,7 +1061,7 @@ function drawContactPage(){
         return '<div class="queue"><b>คิว ' + escapeHtml(o.id.slice(0, 8)) + '</b><p>' +
           escapeHtml(items.join(', ')) + '</p><small>' + escapeHtml(o.status) +
           '</small><button type="button" class="chip" data-order="' + escapeHtml(o.id) + '">เปิดแชท</button></div>';
-      }).join('') || 'ยังไม่มีรายการสั่งซื้อ';
+      }).join('');
       queue.querySelectorAll('[data-order]').forEach(button => button.onclick = () => {
         activeOrder = {id:button.dataset.order,token:''}; show('chat');
       });
@@ -1125,5 +1111,41 @@ function drawContactPage(){
   } finally { loading = false; }
 })();
 </script>
- </body>
+ 
+<style>
+#mixoy-account{margin:16px auto;max-width:900px;padding:18px;border:1px solid #edc6da;border-radius:18px;background:#fff8fc;color:#44273b}
+#mixoy-account input{display:block;width:100%;max-width:420px;box-sizing:border-box;padding:12px;margin:9px 0;border:1px solid #e5b5cd;border-radius:10px}
+#mixoy-account button{margin:5px;padding:10px 15px;border:0;border-radius:10px;background:#b94c85;color:white;cursor:pointer}
+#mixoy-account button:disabled{opacity:.5}
+#mixoy-account .mixoy-order{padding:12px;border:1px solid #f0d4e3;border-radius:12px;margin:9px 0;background:white}
+#mixoy-account .mixoy-error{color:#a51c39}
+</style>
+<section id="mixoy-account" aria-label="บัญชีลูกค้า">
+<h2>♡ บัญชีลูกค้า 3Mixoy</h2>
+<div id="mixoy-guest">
+<p>สมัครสมาชิกหรือเข้าสู่ระบบ เพื่อบันทึกประวัติออเดอร์ถาวรในบัญชีของคุณ</p>
+<input id="mixoy-email" type="email" autocomplete="email" placeholder="อีเมล" maxlength="254">
+<input id="mixoy-password" type="password" autocomplete="current-password" placeholder="รหัสผ่าน (สมัครใหม่อย่างน้อย 10 ตัวอักษร)" maxlength="128">
+<button type="button" id="mixoy-signin">เข้าสู่ระบบ</button><button type="button" id="mixoy-signup">สมัครสมาชิก</button>
+</div>
+<div id="mixoy-member" hidden><p>เข้าสู่ระบบเป็น <strong id="mixoy-who"></strong></p><button type="button" id="mixoy-refresh">ดูประวัติออเดอร์</button><button type="button" id="mixoy-signout">ออกจากระบบ</button><div id="mixoy-history"></div></div>
+<p id="mixoy-auth-status" role="status"></p>
+</section>
+<script>
+(()=>{
+ const byId=id=>document.getElementById(id);
+ let member=null;
+ const status=(message,error=false)=>{const el=byId('mixoy-auth-status');el.textContent=message;el.className=error?'mixoy-error':''};
+ async function call(path,method='GET',body){const response=await fetch('/api/'+path,{method,credentials:'same-origin',headers:{'content-type':'application/json'},...(body?{body:JSON.stringify(body)}:{})});const data=await response.json();if(!response.ok)throw Error(data.error||'เกิดข้อผิดพลาด');return data}
+ function update(){byId('mixoy-guest').hidden=!!member;byId('mixoy-member').hidden=!member;byId('mixoy-who').textContent=member?.email||''}
+ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ async function history(){if(!member)return;const {orders}=await call('customer/orders');byId('mixoy-history').innerHTML=orders.length?orders.map(o=>'<div class="mixoy-order"><b>ออเดอร์ #'+esc(o.id.slice(0,8))+'</b><p>'+esc((o.items||[]).join(', '))+'</p><small>'+esc(o.created_at)+' · '+esc(o.status)+'</small><br><button type="button" data-mixoy-order="'+esc(o.id)+'">เปิดแชทออเดอร์นี้</button></div>').join(''):'ยังไม่มีประวัติคำสั่งซื้อในบัญชีนี้';byId('mixoy-history').querySelectorAll('[data-mixoy-order]').forEach(b=>b.onclick=async()=>{try{const id=b.dataset.mixoyOrder;const result=await call('orders/'+encodeURIComponent(id));sessionStorage.setItem('mixoy-active-order',JSON.stringify({id,token:''}));location.reload()}catch(e){status(e.message,true)}})}
+ async function authenticate(kind){const email=byId('mixoy-email').value.trim(),password=byId('mixoy-password').value;const buttons=[byId('mixoy-signin'),byId('mixoy-signup')];buttons.forEach(b=>b.disabled=true);try{const result=await call('customer/'+kind,'POST',{email,password});member=result.user;byId('mixoy-password').value='';update();status('เข้าสู่ระบบสำเร็จ');await history()}catch(e){status(e.message,true)}finally{buttons.forEach(b=>b.disabled=false)}}
+ byId('mixoy-signin').onclick=()=>authenticate('login');byId('mixoy-signup').onclick=()=>authenticate('register');byId('mixoy-refresh').onclick=()=>history().catch(e=>status(e.message,true));byId('mixoy-signout').onclick=async()=>{try{await call('customer/logout','POST');member=null;update();byId('mixoy-history').textContent='';sessionStorage.removeItem('mixoy-active-order');status('ออกจากระบบแล้ว')}catch(e){status(e.message,true)}};
+ // Override checkout only after existing storefront handlers have been initialized.
+ const checkout=byId('checkout');checkout.onclick=async()=>{if(!member){status('กรุณาเข้าสู่ระบบหรือสมัครสมาชิกก่อนสั่งซื้อ',true);byId('mixoy-account').scrollIntoView({behavior:'smooth'});return}if(!cart.length){alert('กรุณาเลือกสินค้าก่อน');return}checkout.disabled=true;try{const result=await call('orders','POST',{items:cart.map(i=>data.products[i]?.name||'สินค้า')});sessionStorage.setItem('mixoy-active-order',JSON.stringify(result));cart=[];renderCart();status('สั่งซื้อสำเร็จ เลขออเดอร์ '+result.id.slice(0,8));await history();location.reload()}catch(e){status('สั่งซื้อไม่สำเร็จ: '+e.message,true)}finally{checkout.disabled=false}};
+ call('customer/me').then(r=>{member=r.user;update();if(member)history().catch(e=>status(e.message,true))}).catch(e=>status('ระบบบัญชียังไม่พร้อม: '+e.message,true));
+})();
+</script>
+</body>
 </html>
