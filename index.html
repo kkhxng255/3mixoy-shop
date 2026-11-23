@@ -3,7 +3,9 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <title>3Mixoy</title>
+  <title>
+   3Mixoy ร้านค้าตัวอย่าง
+  </title>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Itim&family=Mali:wght@400;600;700&family=Prompt:wght@400;500;600;700&family=Pacifico&display=swap');
 :root{--pink:#f4a7c4;--bg:#fff0f5;--ink:#322b34;--font:'Mali',sans-serif}*{box-sizing:border-box}body{margin:0;background:#eee;font-family:var(--font);color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:460px;min-height:100dvh;margin:auto;background:var(--bg);position:relative;padding-bottom:78px;background-size:cover;background-position:center}.screen{padding:18px}.hidden{display:none!important}.panel{background:#ffffffdf;border:1px solid #f0d6e2;border-radius:22px;padding:16px;margin-bottom:14px;box-shadow:0 3px 12px #a05a7914}.hero{text-align:center;padding:26px 12px 10px}.avatar-wrap{width:164px;height:164px;margin:0 auto;position:relative}.avatar{width:100%;height:100%;object-fit:cover;border-radius:50%;border:5px solid white;box-shadow:0 2px 15px #ae6c8c55;background:#f6c9dc}.avatar-frame{position:absolute;inset:-12%;width:124%;height:124%;object-fit:contain;pointer-events:none}.shopname{font-size:32px;margin:16px 0 0;font-weight:700}.welcome{letter-spacing:5px;font-size:14px;color:#766a73}.story-row,.socials{display:flex;justify-content:space-around;gap:8px}.story{text-align:center;flex:1;min-width:0}.story-icon{height:58px;width:58px;margin:0 auto 5px;border-radius:50%;background:#fce0eb;border:2px solid white;display:grid;place-items:center;font-size:26px;overflow:hidden}.story-icon img{width:100%;height:100%;object-fit:cover}.story small{font-size:11px}.socials a{background:#302a30;color:white;text-decoration:none;border-radius:12px;padding:10px 6px;font-size:12px;flex:1;text-align:center}.review{display:flex;gap:12px;align-items:center;margin:10px 0;padding:10px;background:#fff7fa;border-radius:14px}.review img{width:64px;height:64px;object-fit:cover;border-radius:12px}.review span{font-size:13px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.product{background:#fffdfef2;border-radius:17px;padding:10px;border:1px solid #efd6e1}.product img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px}.product button,.primary{background:var(--pink);border:0;border-radius:18px;padding:10px 14px;color:#372532;font-weight:700}.product strong{display:block}.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);max-width:460px;width:100%;display:flex;background:#fffdfef5;border-top:1px solid #ead3de;z-index:10}.nav button{flex:1;background:none;border:0;padding:10px 0;font-size:12px;color:#65545d}.nav button.active{color:#b83c78;font-weight:700}.nav .symbol{font-size:22px;display:block}.msg{padding:10px 13px;border-radius:16px;background:white;margin:10px 0;max-width:82%;width:fit-content}.msg.mine{margin-left:auto;background:#f9bed8}.chatbar{display:flex;gap:8px}.chatbar input{flex:1;min-width:0}.field{width:100%;border:1px solid #e6c6d5;border-radius:12px;padding:10px;background:#fff;margin:5px 0 12px}.setting-row{margin-bottom:16px}.setting-row label{font-weight:700;display:block;margin-bottom:5px}.setting-row small{display:block;color:#7a6d75}.setting-row input[type=file]{width:100%;font-size:12px}.chip{border:1px solid #e9bfd1;background:#fff;border-radius:14px;padding:7px 10px}.top{display:flex;align-items:center;justify-content:space-between}.cartcount{background:#f7c0d6;border-radius:14px;padding:5px 10px}.note{font-size:12px;color:#75636c}.queue{background:#ffe1ed;padding:12px;border-radius:14px;margin:8px 0}.preview{width:100%;height:100px;object-fit:cover;border-radius:12px;background:#f5e5ec}.actions{display:flex;gap:8px;flex-wrap:wrap}.overlay{position:fixed;inset:0;background:#0008;display:grid;place-items:center;z-index:30;padding:20px}.modal{max-width:420px;width:100%;background:white;padding:20px;border-radius:20px}.status{font-size:12px;color:#6f5d67}.pill{background:#f8dce8;padding:8px;border-radius:16px;margin:6px 0}
@@ -1048,7 +1050,21 @@ function drawContactPage(){
   async function loadQueue() {
     const queue = el('queuelist');
     if (!isAdmin) {
-      queue.textContent = activeOrder ? 'คิวของคุณ: ' + activeOrder.id.slice(0, 8) : 'กรุณาสั่งซื้อเพื่อรับเลขคิว';
+      if (!activeOrder?.id || !activeOrder?.token) {
+        queue.textContent = 'กรุณาสั่งซื้อเพื่อรับเลขคิว (หากเคยสั่งซื้อ ให้เปิดจากเบราว์เซอร์และแท็บเดิม)';
+        return;
+      }
+      queue.textContent = 'กำลังโหลดข้อมูลคิว...';
+      try {
+        const result = await api('orders/' + encodeURIComponent(activeOrder.id) + '?token=' + encodeURIComponent(activeOrder.token));
+        const order = result.order;
+        queue.innerHTML = '<div class="queue"><b>คิวของคุณ: ' + escapeHtml(order.id.slice(0, 8)) + '</b>' +
+          '<p>สินค้า: ' + escapeHtml((order.items || []).join(', ')) + '</p>' +
+          '<p>สถานะ: ' + escapeHtml(order.status || 'รับรายการแล้ว') + '</p>' +
+          '<small>วันที่สั่ง: ' + escapeHtml(order.created_at ? new Date(order.created_at).toLocaleString('th-TH') : '-') + '</small></div>';
+      } catch (e) {
+        queue.textContent = 'ไม่สามารถโหลดคิวได้: ' + e.message;
+      }
       return;
     }
     try {
@@ -1059,7 +1075,7 @@ function drawContactPage(){
         return '<div class="queue"><b>คิว ' + escapeHtml(o.id.slice(0, 8)) + '</b><p>' +
           escapeHtml(items.join(', ')) + '</p><small>' + escapeHtml(o.status) +
           '</small><button type="button" class="chip" data-order="' + escapeHtml(o.id) + '">เปิดแชท</button></div>';
-      }).join('');
+      }).join('') || 'ยังไม่มีรายการสั่งซื้อ';
       queue.querySelectorAll('[data-order]').forEach(button => button.onclick = () => {
         activeOrder = {id:button.dataset.order,token:''}; show('chat');
       });
