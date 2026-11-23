@@ -1120,6 +1120,9 @@ function drawContactPage(){
 #mixoy-account .mixoy-order{padding:12px;border:1px solid #f0d4e3;border-radius:12px;margin:9px 0;background:white}
 #mixoy-account .mixoy-error{color:#a51c39}
 </style>
+<style>
+#mixoy-account .mixoy-error{color:#a51c39}
+
 /* จัดกรอบบัญชีลูกค้าให้พอดีกับหน้าจอ */
 #mixoy-account {
   box-sizing: border-box;
@@ -1130,20 +1133,17 @@ function drawContactPage(){
   overflow-wrap: anywhere;
 }
 
-/* ป้องกันแถบเมนูด้านล่างบังปุ่ม */
 #mixoy-account #mixoy-guest,
 #mixoy-account #mixoy-member {
   padding-bottom: 12px;
 }
 
-/* จัดปุ่มให้ขึ้นบรรทัดใหม่เมื่อพื้นที่ไม่พอ */
 #mixoy-account button {
   display: inline-block;
   max-width: 100%;
   white-space: normal;
 }
 
-/* ปรับให้เหมาะกับมือถือ */
 @media (max-width: 600px) {
   #mixoy-account {
     width: calc(100% - 20px);
@@ -1160,6 +1160,7 @@ function drawContactPage(){
     margin: 5px 4px;
   }
 }
+</style>
 <section id="mixoy-account" aria-label="บัญชีลูกค้า">
 <h2>♡ บัญชีลูกค้า 3Mixoy</h2>
 <div id="mixoy-guest">
