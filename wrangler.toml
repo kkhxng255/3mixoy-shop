@@ -1,0 +1,8 @@
+
+name = "3mixoy-shop-live"
+pages_build_output_dir = "."
+
+[[d1_databases]]
+binding = "DB"
+database_name = "3mixoy-db"
+database_id = "7d7fef67-95d1-4955-b876-c80f8f997ebd"
