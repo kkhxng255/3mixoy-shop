@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="th">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>3Mixoy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Mali:wght@400;600;700&family=Prompt:wght@400;500;600;700&family=Pacifico&display=swap');
+:root{--pink:#f4a7c4;--bg:#fff0f5;--ink:#322b34;--font:'Mali',sans-serif}*{box-sizing:border-box}body{margin:0;background:#eee;font-family:var(--font);color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:460px;min-height:100dvh;margin:auto;background:var(--bg);position:relative;padding-bottom:78px;background-size:cover;background-position:center}.screen{padding:18px}.hidden{display:none!important}.panel{background:#ffffffdf;border:1px solid #f0d6e2;border-radius:22px;padding:16px;margin-bottom:14px;box-shadow:0 3px 12px #a05a7914}.hero{text-align:center;padding:26px 12px 10px}.avatar-wrap{width:164px;height:164px;margin:0 auto;position:relative}.avatar{width:100%;height:100%;object-fit:cover;border-radius:50%;border:5px solid white;box-shadow:0 2px 15px #ae6c8c55;background:#f6c9dc}.avatar-frame{position:absolute;inset:-12%;width:124%;height:124%;object-fit:contain;pointer-events:none}.shopname{font-size:32px;margin:16px 0 0;font-weight:700}.welcome{letter-spacing:5px;font-size:14px;color:#766a73}.story-row,.socials{display:flex;justify-content:space-around;gap:8px}.story{text-align:center;flex:1;min-width:0}.story-icon{height:58px;width:58px;margin:0 auto 5px;border-radius:50%;background:#fce0eb;border:2px solid white;display:grid;place-items:center;font-size:26px;overflow:hidden}.story-icon img{width:100%;height:100%;object-fit:cover}.story small{font-size:11px}.socials a{background:#302a30;color:white;text-decoration:none;border-radius:12px;padding:10px 6px;font-size:12px;flex:1;text-align:center}.review{display:flex;gap:12px;align-items:center;margin:10px 0;padding:10px;background:#fff7fa;border-radius:14px}.review img{width:64px;height:64px;object-fit:cover;border-radius:12px}.review span{font-size:13px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.product{background:#fffdfef2;border-radius:17px;padding:10px;border:1px solid #efd6e1}.product img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px}.product button,.primary{background:var(--pink);border:0;border-radius:18px;padding:10px 14px;color:#372532;font-weight:700}.product strong{display:block}.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);max-width:460px;width:100%;display:flex;background:#fffdfef5;border-top:1px solid #ead3de;z-index:10}.nav button{flex:1;background:none;border:0;padding:10px 0;font-size:12px;color:#65545d}.nav button.active{color:#b83c78;font-weight:700}.nav .symbol{font-size:22px;display:block}.msg{padding:10px 13px;border-radius:16px;background:white;margin:10px 0;max-width:82%;width:fit-content}.msg.mine{margin-left:auto;background:#f9bed8}.chatbar{display:flex;gap:8px}.chatbar input{flex:1;min-width:0}.field{width:100%;border:1px solid #e6c6d5;border-radius:12px;padding:10px;background:#fff;margin:5px 0 12px}.setting-row{margin-bottom:16px}.setting-row label{font-weight:700;display:block;margin-bottom:5px}.setting-row small{display:block;color:#7a6d75}.setting-row input[type=file]{width:100%;font-size:12px}.chip{border:1px solid #e9bfd1;background:#fff;border-radius:14px;padding:7px 10px}.top{display:flex;align-items:center;justify-content:space-between}.cartcount{background:#f7c0d6;border-radius:14px;padding:5px 10px}.note{font-size:12px;color:#75636c}.queue{background:#ffe1ed;padding:12px;border-radius:14px;margin:8px 0}.preview{width:100%;height:100px;object-fit:cover;border-radius:12px;background:#f5e5ec}.actions{display:flex;gap:8px;flex-wrap:wrap}.overlay{position:fixed;inset:0;background:#0008;display:grid;place-items:center;z-index:30;padding:20px}.modal{max-width:420px;width:100%;background:white;padding:20px;border-radius:20px}.status{font-size:12px;color:#6f5d67}.pill{background:#f8dce8;padding:8px;border-radius:16px;margin:6px 0}
+</style><style>
+.extra-card{background:#fff9fc;border:1px solid #efcbdc;border-radius:15px;padding:12px;margin:10px 0}.extra-card img{max-width:100%;max-height:180px;object-fit:contain;border-radius:10px}.extra-card button{margin:4px}.stars{display:flex;gap:7px}.stars button{border:0;background:#ffe2ee;border-radius:9px;padding:8px;font-size:22px}.stars button.chosen{background:#f4a7c4}.review-portrait{max-width:230px}.review-landscape{width:100%}.review-square{max-width:270px}.muted{font-size:12px;color:#75636c}
+.mixoy-click-sticker{position:fixed;z-index:9999;pointer-events:none;object-fit:contain;transform:translate(-50%,-50%) scale(.45);filter:drop-shadow(0 4px 10px #0002);animation:mixoyStickerPop 1.4s ease-out forwards}@keyframes mixoyStickerPop{0%{opacity:0;transform:translate(-50%,-40%) scale(.35) rotate(-12deg)}18%{opacity:1;transform:translate(-50%,-65%) scale(1.12) rotate(5deg)}45%{opacity:1;transform:translate(-50%,-100%) scale(1) rotate(-3deg)}100%{opacity:0;transform:translate(-50%,-185%) scale(.75) rotate(8deg)}}@media(prefers-reduced-motion:reduce){.mixoy-click-sticker{animation:mixoyStickerPop .5s ease-out forwards}}
+</style><style>
+#home .socials .mixoy-contact-entry{width:100%;border:0;border-radius:16px;padding:14px;background:#302a31;color:white;font-weight:700;font-size:16px;cursor:pointer}
+.mixoy-contact-page{position:fixed;inset:0;z-index:100;background:#fff2f7;overflow:auto;padding:20px 14px 45px}
+.mixoy-contact-page.hidden{display:none!important}
+.mixoy-contact-page-inner{max-width:460px;margin:auto}
+.mixoy-contact-head{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #efd7e1;border-radius:20px;padding:10px 16px;font-size:19px}
+.mixoy-contact-head button{background:transparent;border:0;font-size:32px;line-height:1;color:#322b34}
+.mixoy-contact-head span{width:28px}
+.mixoy-contact-subtitle{text-align:center;color:#77666f;font-size:13px;margin:20px 0}
+#mixoyContactLinks{display:grid;gap:12px}
+.mixoy-contact-link{display:flex;align-items:center;justify-content:center;min-height:66px;background:#fff;border:1px solid #f0d6e2;border-radius:19px;text-decoration:none;color:#302a31;font-weight:700;position:relative;padding:12px 44px;box-shadow:0 3px 12px #a05a7910;overflow:hidden}
+.mixoy-contact-link img{display:block;max-width:100%;max-height:75px;object-fit:contain}
+.mixoy-contact-arrow{position:absolute;right:18px;font-size:20px;color:#9d7988}
+</style>
+ </head>
+ <body>
+  <main class="app" id="app">
+   <section class="screen" id="home">
+    <div class="hero">
+     <div class="cover-back" id="coverBack">
+      <div class="avatar-wrap">
+       <img class="avatar" id="avatar"/>
+       <img class="avatar-frame" id="frame" style="display:none"/>
+      </div>
+      <div class="shopname" id="shopname">
+       ♡ 3Mixoy
+      </div>
+      <div class="welcome" id="welcome">
+       Welcome to
+      </div>
+     </div>
+    </div>
+    <div class="panel">
+     <b>
+      สตอรี่ร้าน ♡
+     </b>
+     <div class="story-row" id="stories">
+     </div>
+    </div>
+    <div class="panel">
+     <div class="socials">
+      <a id="line" rel="noopener" target="_blank">
+       LINE
+      </a>
+      <a id="tiktok" rel="noopener" target="_blank">
+       TikTok
+      </a>
+      <a id="instagram" rel="noopener" target="_blank">
+       Instagram
+      </a>
+     </div>
+    </div>
+    <div class="panel">
+     <h3>
+      ♡ รีวิวจากลูกค้า
+     </h3>
+     <div id="reviews">
+     </div>
+     <div class="extra-card">
+      <h4>
+       ✍️ ส่งรีวิวร้าน
+      </h4>
+      <input class="field" id="reviewCustomer" placeholder="ชื่อลูกค้า (ไม่บังคับ)"/>
+      <div class="stars" id="reviewStars">
+      </div>
+      <textarea class="field" id="reviewText" placeholder="เขียนรีวิวของคุณ..."></textarea>
+      <label>
+       แนบรูปรีวิว (ไม่บังคับ)
+       <input accept="image/*" id="reviewPhoto" type="file"/>
+      </label>
+      <button class="primary" id="submitReview">
+       ส่งรีวิว
+      </button>
+      <p class="muted">
+       รีวิวจะแสดงทันทีหลังส่ง (ข้อมูลตัวอย่างเก็บในเครื่องนี้)
+      </p>
+     </div>
+    </div>
+   </section>
+   <section class="screen hidden" id="products">
+    <div class="top">
+     <h2>
+      เลือกสินค้า ♡
+     </h2>
+     <span class="cartcount" id="cartcount">
+      🛒 0
+     </span>
+    </div>
+    <input class="field" id="search" placeholder="ค้นหาสินค้า..."/>
+    <div class="grid" id="productgrid">
+    </div>
+    <div class="panel" style="margin-top:16px">
+     <h3>
+      ตะกร้าสินค้า
+     </h3>
+     <div id="cartlist">
+     </div>
+     <button class="primary" id="checkout">
+      สั่งซื้อ → แชท
+     </button>
+    </div>
+   </section>
+   <section class="screen hidden" id="chat">
+    <h2>
+     แชทร้าน ♡
+    </h2>
+    <div class="panel">
+     <div id="messages">
+     </div>
+     <div class="chatbar">
+      <input class="field" id="messageinput" placeholder="พิมพ์ข้อความ..."/>
+      <button class="primary" id="send">
+       ➤
+      </button>
+     </div>
+    </div>
+    <div class="grid">
+     <button class="chip" id="payment">
+      ♡ ช่องทางโอน
+     </button>
+     <button class="chip" id="points">
+      ⭐ สะสมแต้ม
+     </button>
+     <button class="chip" onclick="show('queue')">
+      📋 เช็กคิว
+     </button>
+     <button class="chip" id="extra">
+      🎁 ฟีเจอร์เพิ่มเติม
+     </button>
+    </div>
+    <p class="note">
+     ตัวอย่างแชทในเครื่อง ยังไม่เชื่อมต่อกับลูกค้าจริง
+    </p>
+   </section>
+   <section class="screen hidden" id="queue">
+    <h2>
+     เช็กคิวร้าน ♡
+    </h2>
+    <div class="panel" id="queuelist">
+    </div>
+   </section>
+   <section class="screen hidden" id="settings">
+    <h2>
+     ⚙️ ตั้งค่าร้าน
+    </h2>
+    <div class="panel" id="locked">
+     <p>
+      สำหรับเจ้าของร้านเท่านั้น
+     </p>
+     <input class="field" id="pass" placeholder="รหัสผ่านทดลอง" type="password"/>
+     <button class="primary" id="login">
+      เข้าสู่ระบบ
+     </button>
+     <p class="note">
+      รหัสทดลอง 1234 (ไม่ปลอดภัยสำหรับใช้งานจริง)
+     </p>
+    </div>
+    <div class="hidden" id="editor">
+     <div class="panel">
+      <h3>
+       ข้อมูลร้านและฟอนต์
+      </h3>
+      <label>
+       ชื่อร้าน
+       <input class="field" id="editname"/>
+      </label>
+      <label>
+       ข้อความต้อนรับ
+       <input class="field" id="editwelcome"/>
+      </label>
+      <label>
+       ฟอนต์ชื่อร้าน
+       <select class="field" id="namefont">
+        <option value="Pacifico">
+         Pacifico (ลายมืออังกฤษ)
+        </option>
+        <option value="Mali">
+         Mali (น่ารัก)
+        </option>
+        <option value="Itim">
+         Itim (กลม)
+        </option>
+        <option value="Prompt">
+         Prompt (เรียบ)
+        </option>
+       </select>
+      </label>
+      <label>
+       ฟอนต์ทั้งเว็บ
+       <select class="field" id="bodyfont">
+        <option>
+         Mali
+        </option>
+        <option>
+         Itim
+        </option>
+        <option>
+         Prompt
+        </option>
+       </select>
+      </label>
+      <div class="setting-row">
+       <label>
+        อัปโหลดฟอนต์ของตัวเอง (.ttf .otf .woff .woff2)
+       </label>
+       <input accept=".ttf,.otf,.woff,.woff2,font/ttf,font/otf,font/woff,font/woff2" id="customfontfile" type="file"/>
+       <small>
+        เลือกฟอนต์จากรายการด้านบนหลังอัปโหลด (บันทึกเฉพาะเบราว์เซอร์นี้)
+       </small>
+       <div id="customfontlist">
+       </div>
+      </div>
+      <label>
+       สีธีม
+       <input class="field" id="themecolor" type="color"/>
+      </label>
+     </div>
+     <div class="panel">
+      <h3>
+       อัปโหลดรูปเองได้ฟรี
+      </h3>
+      <div class="setting-row">
+       <label>
+        ปกหลังวงกลม (อัปโหลดรูปเอง)
+       </label>
+       <input accept="image/*" id="coverfile" type="file"/>
+       <button class="chip" id="removecover" type="button">
+        ลบปกหลังวงกลม
+       </button>
+       <small>
+        รูปปกอยู่หลังวงกลมโปรไฟล์ แยกจากพื้นหลังทั้งเว็บไซต์
+       </small>
+       <label>
+        ความสูงปก (พิกเซล)
+       </label>
+       <input class="field" id="coverheight" max="450" min="220" step="10" type="range" value="300"/>
+       <label>
+        ตำแหน่งรูปปก
+       </label>
+       <select class="field" id="coverposition">
+        <option value="center">
+         ตรงกลาง
+        </option>
+        <option value="top">
+         ด้านบน
+        </option>
+        <option value="bottom">
+         ด้านล่าง
+        </option>
+       </select>
+      </div>
+      <div class="setting-row">
+       <label>
+        รูปโปรไฟล์
+       </label>
+       <input accept="image/*" id="avatarfile" type="file"/>
+      </div>
+      <div class="setting-row">
+       <label>
+        กรอบโปรไฟล์ PNG (พื้นหลังโปร่งใส)
+       </label>
+       <input accept="image/png,image/webp" id="framefile" type="file"/>
+       <button class="chip" id="removeframe">
+        ลบกรอบ
+       </button>
+      </div>
+      <div class="setting-row">
+       <label>
+        รูปพื้นหลังเว็บไซต์
+       </label>
+       <input accept="image/*" id="bgfile" type="file"/>
+       <button class="chip" id="removebg">
+        ลบพื้นหลัง
+       </button>
+      </div>
+      <div class="setting-row">
+       <label>
+        เชือก/โบตกแต่ง PNG
+       </label>
+       <input accept="image/png,image/webp" id="decorfile" type="file"/>
+       <small>
+        ตัวอย่างจะแสดงด้านบนของหน้าร้าน
+       </small>
+      </div>
+     </div>
+     <div class="panel">
+      <h3>
+       แก้ไขสตอรี่ (อิโมจิหรือรูปเอง)
+      </h3>
+      <div id="storyeditor">
+      </div>
+     </div>
+     <div class="panel">
+      <h3>
+       ช่องทางติดต่อ
+      </h3>
+      <label>
+       LINE URL
+       <input class="field" id="editline"/>
+      </label>
+      <label>
+       TikTok URL
+       <input class="field" id="edittiktok"/>
+      </label>
+      <label>
+       Instagram URL
+       <input class="field" id="editinstagram"/>
+      </label>
+     </div>
+     <div class="panel">
+      <h3>
+       เพิ่มสินค้า
+      </h3>
+      <input class="field" id="pname" placeholder="ชื่อสินค้า"/>
+      <input class="field" id="pprice" min="0" placeholder="ราคา" type="number"/>
+      <input accept="image/*" class="field" id="pimage" type="file"/>
+      <button class="primary" id="addproduct">
+       เพิ่มสินค้า
+      </button>
+     </div>
+     <div class="panel">
+      <h3>
+       รีวิวจากลูกค้า
+      </h3>
+      <div id="reviewAdmin">
+      </div>
+      <h4>
+       ตกแต่งกรอบรีวิว
+      </h4>
+      <label>
+       รูปกรอบ PNG
+       <input accept="image/png,image/webp" id="reviewFrameFile" type="file"/>
+      </label>
+      <button class="chip" id="clearReviewFrame">
+       ลบกรอบ
+      </button>
+      <label>
+       รูปแบบกรอบ
+       <select class="field" id="reviewShape">
+        <option value="square">
+         สี่เหลี่ยมจัตุรัส
+        </option>
+        <option value="portrait">
+         แนวตั้ง
+        </option>
+        <option value="landscape">
+         แนวนอน
+        </option>
+       </select>
+      </label>
+     </div>
+     <div class="panel">
+      <h3>
+       ช่องทางรับโอนเงิน (เพิ่มได้หลายช่องทาง)
+      </h3>
+      <div id="paymentAdmin">
+      </div>
+      <input class="field" id="payTitle" placeholder="ชื่อช่องทาง เช่น พร้อมเพย์ / กสิกร"/>
+      <input class="field" id="payHolder" placeholder="ชื่อบัญชี"/>
+      <input class="field" id="payNumber" placeholder="เลขบัญชี / เบอร์พร้อมเพย์"/>
+      <input class="field" id="payLink" placeholder="ลิงก์ชำระเงิน (ถ้ามี)"/>
+      <label>
+       QR Code
+       <input accept="image/*" id="payQr" type="file"/>
+      </label>
+      <button class="primary" id="addPayment">
+       + เพิ่มช่องทาง
+      </button>
+     </div>
+     <div class="panel">
+      <h3>
+       ข้อมูลโอนเงินและแต้ม
+      </h3>
+      <input class="field" id="bankname" placeholder="ชื่อบัญชี/ธนาคาร"/>
+      <input class="field" id="banklink" placeholder="ลิงก์ชำระเงิน"/>
+      <input class="field" id="pointsvalue" placeholder="แต้มสะสม" type="number"/>
+      <button class="primary" id="save">
+       บันทึกการตั้งค่า
+      </button>
+     </div>
+     <p class="note">
+      ข้อมูลตัวอย่างเก็บในเบราว์เซอร์เครื่องนี้เท่านั้น
+     </p>
+    </div>
+   </section>
+   <nav class="nav" id="nav">
+   </nav>
+  </main>
+  <div class="overlay hidden" id="overlay">
+   <div class="modal">
+    <div id="modaltext">
+    </div>
+    <button class="primary" onclick="closeModal()">
+     ปิด
+    </button>
+   </div>
+  </div>
+  <script>
+const $=id=>document.getElementById(id),escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const defaultData={customFonts:[],name:'♡ 3Mixoy',welcome:'Welcome to',namefont:'Pacifico',bodyfont:'Mali',color:'#f4a7c4',avatar:'',frame:'',bg:'',decor:'',stories:[{emoji:'✨',title:'สินค้าใหม่',image:''},{emoji:'🎁',title:'โปรโมชั่น',image:''},{emoji:'💗',title:'รีวิว',image:''}],links:{line:'https://line.me',tiktok:'https://www.tiktok.com',instagram:'https://www.instagram.com'},products:[{name:'กิ๊บติดผม',price:49,image:''},{name:'พวงกุญแจ',price:59,image:''},{name:'ยางมัดผม',price:39,image:''},{name:'กระเป๋า',price:199,image:''}],bank:'ชื่อบัญชีตัวอย่าง',banklink:'',points:100};
+let data;try{data={...defaultData,...JSON.parse(localStorage.getItem('mixoy-demo')||'{}')}}catch{data=structuredClone(defaultData)};let cart=[],messages=[{text:'สวัสดีค่ะ ยินดีให้บริการนะคะ ♡',mine:false}],orders=[];const saveData=()=>{try{localStorage.setItem('mixoy-demo',JSON.stringify(data))}catch{alert('รูปมีขนาดใหญ่เกินพื้นที่จัดเก็บ ลองใช้รูปขนาดเล็กลงค่ะ')}};
+const imagePlaceholder='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="#f6d9e5"/><text x="100" y="105" text-anchor="middle" font-size="50">♡</text></svg>');
+function installFonts(){document.querySelectorAll('style[data-custom-font]').forEach(x=>x.remove());(data.customFonts||[]).forEach(f=>{const st=document.createElement('style');st.dataset.customFont='';st.textContent='@font-face{font-family:'+JSON.stringify(f.family)+';src:url('+JSON.stringify(f.data)+') format('+JSON.stringify(f.format)+');font-display:swap}';document.head.appendChild(st)});for(const id of ['namefont','bodyfont']){const sel=$(id);const old=sel.value;sel.querySelectorAll('option[data-uploaded]').forEach(x=>x.remove());(data.customFonts||[]).forEach(f=>{const opt=document.createElement('option');opt.value=f.family;opt.textContent='✦ '+f.name;opt.dataset.uploaded='1';sel.appendChild(opt)});sel.value=old}}
+function render(){installFonts();document.documentElement.style.setProperty('--pink',data.color);document.documentElement.style.setProperty('--font',`'${data.bodyfont}',sans-serif`);$('app').style.backgroundImage=data.bg?`linear-gradient(#fff7,#fff7),url("${data.bg}")`:'';$('shopname').textContent=data.name;$('shopname').style.fontFamily=`'${data.namefont}',sans-serif`;$('welcome').textContent=data.welcome;$('avatar').src=data.avatar||imagePlaceholder;$('frame').style.display=data.frame?'block':'none';if(data.frame)$('frame').src=data.frame;$('stories').innerHTML=data.stories.map((s,i)=>`<div class="story"><div class="story-icon">${s.image?`<img src="${s.image}" alt="">`:escapeHtml(s.emoji)}</div><small>${escapeHtml(s.title)}</small></div>`).join('');if(data.decor){$('home').style.backgroundImage=`url("${data.decor}")`;$('home').style.backgroundRepeat='no-repeat';$('home').style.backgroundPosition='center top';$('home').style.backgroundSize='100% auto'}else $('home').style.backgroundImage='';for(const k of ['line','tiktok','instagram'])$(k).href=/^https?:\/\//.test(data.links[k]||'')?data.links[k]:'#';$('reviews').innerHTML='<div class="review"><img src="'+imagePlaceholder+'"><span>★★★★★<br>น่ารักมากเลยค่ะ ♡</span></div><div class="review"><img src="'+imagePlaceholder+'"><span>★★★★★<br>บริการดีมากค่ะ</span></div>';renderProducts();renderCart();renderChat();renderQueue()}
+function renderProducts(){let q=$('search').value.toLowerCase();$('productgrid').innerHTML=data.products.map((p,i)=>({...p,i})).filter(p=>p.name.toLowerCase().includes(q)).map(p=>`<article class="product"><img src="${p.image||imagePlaceholder}" alt=""><strong>${escapeHtml(p.name)}</strong><div>฿${Number(p.price).toLocaleString()}</div><button onclick="addCart(${p.i})">🛒 ใส่ตะกร้า</button></article>`).join('')}
+function addCart(i){cart.push(i);renderCart()}function renderCart(){$('cartcount').textContent='🛒 '+cart.length;$('cartlist').innerHTML=cart.length?cart.map((i,n)=>`<div class="pill">${escapeHtml(data.products[i]?.name)} — ฿${data.products[i]?.price} <button class="chip" onclick="cart.splice(${n},1);renderCart()">×</button></div>`).join('')+'<p>รวม ฿'+cart.reduce((s,i)=>s+Number(data.products[i]?.price||0),0)+'</p>':'ยังไม่มีสินค้าในตะกร้า'}
+function renderChat(){$('messages').innerHTML=messages.map(m=>`<div class="msg ${m.mine?'mine':''}">${escapeHtml(m.text)}</div>`).join('')}
+function renderQueue(){$('queuelist').innerHTML=orders.length?orders.map((o,i)=>`<div class="queue"><b>คิว #${i+1}</b><p>${escapeHtml(o)}</p><small>สถานะ: รับรายการแล้ว (ตัวอย่าง)</small></div>`).join(''):'ยังไม่มีรายการสั่งซื้อ'}
+const tabs=[['home','⌂','หน้าแรก'],['products','🛒','สินค้า'],['chat','☏','แชท'],['queue','▣','เช็กคิว'],['settings','⚙','ตั้งค่า']];function show(id){for(const [t] of tabs)$(t).classList.toggle('hidden',t!==id);$('nav').innerHTML=tabs.map(([t,ico,label])=>`<button class="${t===id?'active':''}" onclick="show('${t}')"><span class="symbol">${ico}</span>${label}</button>`).join('');scrollTo(0,0)}
+function modal(html){$('modaltext').innerHTML=html;$('overlay').classList.remove('hidden')}function closeModal(){$('overlay').classList.add('hidden')}
+$('search').oninput=renderProducts;$('checkout').onclick=()=>{if(!cart.length)return alert('กรุณาเลือกสินค้าก่อน');const summary=cart.map(i=>data.products[i]?.name).join(', ');orders.push(summary);messages.push({text:'สั่งซื้อ: '+summary,mine:true});cart=[];render();show('chat')};$('send').onclick=()=>{const t=$('messageinput').value.trim();if(t){messages.push({text:t,mine:true});$('messageinput').value='';renderChat()}};$('messageinput').onkeydown=e=>{if(e.key==='Enter')$('send').click()};$('payment').onclick=()=>modal(`<h3>♡ ช่องทางโอนเงิน</h3><p>${escapeHtml(data.bank)}</p>${/^https?:\/\//.test(data.banklink)?`<a href="${escapeHtml(data.banklink)}" target="_blank" rel="noopener">เปิดลิงก์ชำระเงิน</a>`:''}<textarea class="field" placeholder="รายละเอียดการโอน"></textarea>`);$('points').onclick=()=>modal(`<h3>⭐ สะสมแต้ม</h3><p>แต้มตัวอย่าง: ${Number(data.points)||0} แต้ม</p>`);$('extra').onclick=()=>modal('<h3>🎁 ฟีเจอร์เพิ่มเติม</h3><p>พื้นที่สำหรับเจ้าของร้านใส่รูปหรือรายละเอียดเองในเวอร์ชันเต็ม</p>');
+$('login').onclick=()=>{if($('pass').value==='1234'){$('locked').classList.add('hidden');$('editor').classList.remove('hidden');fillEditor()}else alert('รหัสไม่ถูกต้อง')};
+function fillEditor(){installFonts();renderFontList();for(const [id,v] of Object.entries({editname:data.name,editwelcome:data.welcome,namefont:data.namefont,bodyfont:data.bodyfont,themecolor:data.color,editline:data.links.line,edittiktok:data.links.tiktok,editinstagram:data.links.instagram,bankname:data.bank,banklink:data.banklink,pointsvalue:data.points}))$(id).value=v;$('storyeditor').innerHTML=data.stories.map((s,i)=>`<div class="setting-row"><b>สตอรี่ ${i+1}</b><input class="field" id="stitle${i}" value="${escapeHtml(s.title)}" placeholder="ชื่อสตอรี่"><input class="field" id="semoji${i}" value="${escapeHtml(s.emoji)}" placeholder="อิโมจิ"><label>หรืออัปโหลดรูปแทนอิโมจิ</label><input type="file" accept="image/*" id="simage${i}"><button class="chip" onclick="data.stories[${i}].image='';saveData();render()">ลบรูปสตอรี่</button></div>`).join('');data.stories.forEach((s,i)=>$('simage'+i).onchange=e=>upload(e.target.files[0],v=>{data.stories[i].image=v;saveData();render()}))}
+function renderFontList(){$('customfontlist').innerHTML=(data.customFonts||[]).map((f,i)=>'<div class="pill"><span style="font-family:'+escapeHtml(f.family)+'">'+escapeHtml(f.name)+'</span> <button class="chip" onclick="removeCustomFont('+i+')">ลบ</button></div>').join('')}
+function removeCustomFont(i){const f=data.customFonts[i];if(data.namefont===f.family)data.namefont='Pacifico';if(data.bodyfont===f.family)data.bodyfont='Mali';data.customFonts.splice(i,1);saveData();render();fillEditor()}
+$('customfontfile').onchange=e=>{const file=e.target.files[0];if(!file)return;const ext=(file.name.split('.').pop()||'').toLowerCase();const formats={ttf:'truetype',otf:'opentype',woff:'woff',woff2:'woff2'};if(!formats[ext])return alert('รองรับเฉพาะ TTF, OTF, WOFF, WOFF2');if(file.size>1200000)return alert('ไฟล์ฟอนต์ต้องไม่เกิน 1.2 MB ในเวอร์ชันทดลอง');const reader=new FileReader();reader.onload=()=>{const family='UploadedFont'+Date.now();data.customFonts=data.customFonts||[];data.customFonts.push({name:file.name,family,data:reader.result,format:formats[ext]});saveData();installFonts();renderFontList();$('namefont').value=family;alert('นำเข้าฟอนต์แล้วค่ะ เลือกใช้และกดบันทึกการตั้งค่าได้เลย')};reader.readAsDataURL(file)};
+function upload(file,done){if(!file)return;if(file.size>1500000)return alert('กรุณาใช้รูปขนาดไม่เกิน 1.5 MB สำหรับตัวอย่างนี้');const r=new FileReader();r.onload=()=>done(r.result);r.readAsDataURL(file)};for(const [id,key] of [['coverfile','coverImage'],['avatarfile','avatar'],['framefile','frame'],['bgfile','bg'],['decorfile','decor']])$(id).onchange=e=>upload(e.target.files[0],v=>{data[key]=v;saveData();render()});$('removeframe').onclick=()=>{data.frame='';saveData();render()};$('removebg').onclick=()=>{data.bg='';saveData();render()};$('save').onclick=()=>{data.name=$('editname').value;data.welcome=$('editwelcome').value;data.namefont=$('namefont').value;data.bodyfont=$('bodyfont').value;data.color=$('themecolor').value;data.links={line:$('editline').value,tiktok:$('edittiktok').value,instagram:$('editinstagram').value};data.bank=$('bankname').value;data.banklink=$('banklink').value;data.points=Number($('pointsvalue').value)||0;data.stories.forEach((s,i)=>{s.title=$('stitle'+i).value;s.emoji=$('semoji'+i).value});saveData();render();alert('บันทึกแล้วค่ะ')};$('addproduct').onclick=()=>{const name=$('pname').value.trim(),price=Number($('pprice').value);if(!name||!Number.isFinite(price)||price<0)return alert('กรอกชื่อและราคาสินค้า');const done=image=>{data.products.push({name,price,image});saveData();render();$('pname').value='';$('pprice').value='';$('pimage').value='';alert('เพิ่มสินค้าแล้วค่ะ')};$('pimage').files[0]?upload($('pimage').files[0],done):done('')};render();show('home');
+</script><script>
+// Add-on: review submission, moderation, and multiple payment methods.
+const addonKey='mixoy-reviews-payments-v1';
+let addon;try{addon=JSON.parse(localStorage.getItem(addonKey))||{}}catch{addon={}};
+addon.reviews ||= [];addon.payments ||= [];addon.reviewFrame ||= '';addon.reviewShape ||= 'square';
+let reviewRating=5;
+const persistAddon=()=>{try{localStorage.setItem(addonKey,JSON.stringify(addon))}catch(e){alert('พื้นที่จัดเก็บเต็ม กรุณาใช้รูปขนาดเล็กลง')}};
+const safe=x=>escapeHtml(x??'');
+function refreshStars(){const el=$('reviewStars');el.innerHTML=[1,2,3,4,5].map(n=>`<button type="button" class="${n<=reviewRating?'chosen':''}" data-star="${n}" aria-label="${n} ดาว">${n<=reviewRating?'★':'☆'}</button>`).join('');el.querySelectorAll('button').forEach(b=>b.onclick=()=>{reviewRating=+b.dataset.star;refreshStars()})}
+function getSmallImage(file,callback){if(!file)return callback('');if(file.size>1200000)return alert('ไฟล์ภาพต้องไม่เกิน 1.2 MB');const r=new FileReader();r.onload=()=>callback(r.result);r.readAsDataURL(file)}
+function renderCustomerReviews(){const el=$('reviews');el.innerHTML=addon.reviews.filter(r=>r.approved).map(r=>`<div class="extra-card ${'review-'+addon.reviewShape}">${r.photo?`<div style="position:relative"><img src="${r.photo}" style="width:100%;aspect-ratio:${addon.reviewShape==='portrait'?'3/4':addon.reviewShape==='landscape'?'16/9':'1'};object-fit:cover">${addon.reviewFrame?`<img src="${addon.reviewFrame}" style="position:absolute;inset:0;width:100%;height:100%;max-height:none;pointer-events:none">`:''}</div>`:''}<strong>${safe(r.customer||'ลูกค้า')}</strong><div style="color:#d24c87">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div><p>${safe(r.text)}</p></div>`).join('')+el.innerHTML.replace(/<div class="extra-card[\s\S]*/,'');}
+// Dedicated review list to avoid touching the existing demonstration reviews.
+const reviewList=document.createElement('div');reviewList.id='approvedReviewList';$('reviews').after(reviewList);
+function drawReviews(){reviewList.innerHTML=addon.reviews.filter(r=>r.approved).map(r=>`<div class="extra-card ${'review-'+addon.reviewShape}">${r.photo?`<div style="position:relative"><img src="${r.photo}" style="width:100%;aspect-ratio:${addon.reviewShape==='portrait'?'3/4':addon.reviewShape==='landscape'?'16/9':'1'};object-fit:cover">${addon.reviewFrame?`<img src="${addon.reviewFrame}" style="position:absolute;inset:0;width:100%;height:100%;max-height:none;pointer-events:none">`:''}</div>`:''}<b>${safe(r.customer||'ลูกค้า')}</b><div style="color:#d24c87">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div><p>${safe(r.text)}</p></div>`).join('');if($('reviewAdmin'))$('reviewAdmin').innerHTML=addon.reviews.map((r,i)=>`<div class="extra-card"><b>${safe(r.customer||'ลูกค้า')}</b> · ${r.rating} ดาว · ${r.approved?'เผยแพร่แล้ว':'รออนุมัติ'}<p>${safe(r.text)}</p><button class="chip" data-approve="${i}">${r.approved?'ซ่อนรีวิว':'อนุมัติรีวิว'}</button><button class="chip" data-delete="${i}">ลบ</button></div>`).join('')||'<p class="muted">ยังไม่มีรีวิว</p>';document.querySelectorAll('#reviewAdmin [data-approve]').forEach(b=>b.onclick=()=>{addon.reviews[+b.dataset.approve].approved=!addon.reviews[+b.dataset.approve].approved;persistAddon();drawReviews()});document.querySelectorAll('#reviewAdmin [data-delete]').forEach(b=>b.onclick=()=>{if(confirm('ลบรีวิวนี้?')){addon.reviews.splice(+b.dataset.delete,1);persistAddon();drawReviews()}});}
+$('submitReview').onclick=()=>{const t=$('reviewText').value.trim();if(!t)return alert('กรุณาเขียนข้อความรีวิว');getSmallImage($('reviewPhoto').files[0],photo=>{addon.reviews.push({customer:$('reviewCustomer').value.trim().slice(0,80),text:t.slice(0,1000),rating:reviewRating,photo,approved:true,date:new Date().toISOString()});persistAddon();$('reviewCustomer').value='';$('reviewText').value='';$('reviewPhoto').value='';alert('ส่งรีวิวสำเร็จ รีวิวแสดงทันทีค่ะ');drawReviews()})};
+$('reviewShape').value=addon.reviewShape;$('reviewShape').onchange=e=>{addon.reviewShape=e.target.value;persistAddon();drawReviews()};$('reviewFrameFile').onchange=e=>getSmallImage(e.target.files[0],src=>{addon.reviewFrame=src;persistAddon();drawReviews()});$('clearReviewFrame').onclick=()=>{addon.reviewFrame='';persistAddon();drawReviews()};
+function drawPayments(){$('paymentAdmin').innerHTML=addon.payments.map((p,i)=>`<div class="extra-card"><b>${safe(p.title)}</b><div>${safe(p.holder)}</div><div>${safe(p.number)}</div>${p.qr?`<img src="${p.qr}" alt="QR Code">`:''}<button class="chip" data-payment-delete="${i}">ลบช่องทาง</button></div>`).join('')||'<p class="muted">ยังไม่มีช่องทางโอนเพิ่มเติม</p>';$('paymentAdmin').querySelectorAll('[data-payment-delete]').forEach(b=>b.onclick=()=>{addon.payments.splice(+b.dataset.paymentDelete,1);persistAddon();drawPayments()})}
+$('addPayment').onclick=()=>{const title=$('payTitle').value.trim(),holder=$('payHolder').value.trim(),number=$('payNumber').value.trim(),link=$('payLink').value.trim();if(!title||!number)return alert('กรุณากรอกชื่อช่องทางและเลขบัญชี');if(link&&!/^https:\/\//i.test(link))return alert('ลิงก์ต้องเริ่มด้วย https://');getSmallImage($('payQr').files[0],qr=>{addon.payments.push({title,holder,number,link,qr});persistAddon();['payTitle','payHolder','payNumber','payLink','payQr'].forEach(id=>$(id).value='');drawPayments()})};
+$('payment').onclick=()=>modal('<h3>♡ ช่องทางการโอน</h3>'+ (addon.payments.length?addon.payments.map(p=>`<div class="extra-card"><b>${safe(p.title)}</b><p>ชื่อบัญชี: ${safe(p.holder)}</p><p>เลขบัญชี: ${safe(p.number)}</p>${p.qr?`<img src="${p.qr}" alt="QR Code">`:''}${p.link?`<p><a href="${safe(p.link)}" target="_blank" rel="noopener noreferrer">เปิดลิงก์ชำระเงิน</a></p>`:''}</div>`).join(''):`<p>${safe(data.bank)}</p>`));
+refreshStars();drawReviews();drawPayments();
+</script><style>
+#fxDropLayer{pointer-events:none;position:fixed;inset:0;z-index:40;overflow:hidden} .fx-falling{position:absolute;top:-180px;width:110px;max-height:150px;object-fit:contain;animation:fallMixoy 6s linear forwards}@keyframes fallMixoy{0%{transform:translateY(-30px) rotate(-15deg);opacity:0}12%{opacity:1}85%{opacity:1}100%{transform:translateY(115vh) rotate(25deg);opacity:0}}.fx-preview{max-width:100%;max-height:130px;object-fit:contain}.fx-range{width:100%}.fx-mini{font-size:12px;color:#665761}.fx-flex{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.fx-flex button{flex:1}.fx-banner{width:100%;max-height:170px;object-fit:contain;border-radius:14px}.fx-feature{margin:10px 0}.fx-music-control{position:fixed;bottom:72px;right:max(calc((100vw - 460px)/2 + 12px),12px);z-index:11;background:#fffdfef0;border:1px solid #eac5d8;border-radius:30px;padding:8px 12px;display:flex;align-items:center;gap:7px;box-shadow:0 2px 10px #0002}.fx-music-control button{border:0;background:var(--pink);border-radius:50%;width:32px;height:32px}.fx-music-control input{width:75px}#fx-feature-image{cursor:pointer}#fx-feature-image:focus{outline:2px solid var(--pink)}
+</style>
+  <div aria-hidden="true" id="fxDropLayer">
+  </div>
+  <div class="fx-music-control hidden" id="fxMusicControl">
+   <button id="fxMusicToggle" title="เล่นหรือหยุดเพลง">
+    ▶
+   </button>
+   <span style="font-size:11px">
+    เพลงร้าน
+   </span>
+   <input aria-label="ระดับเสียงเพลง" id="fxMusicVolume" max="100" min="0" type="range" value="40"/>
+  </div>
+  <script>
+/* Optional visual/audio effects: demo-only, saved on this browser. */
+(function(){
+ const initial={featureImage:'',fallImage:'',clickSound:'',music:'',musicMode:'manual',musicVolume:40,soundVolume:55,fallEnabled:true,snowMode:'continuous',snowCount:12,snowSpeed:6,snowSize:38,pointsPerOrder:1,pointsRedeem:10};
+ let fx;try{fx={...initial,...JSON.parse(localStorage.getItem('mixoy-effects-v1')||'{}')}}catch{fx={...initial}}
+ const audioMusic=new Audio();audioMusic.loop=true;audioMusic.preload='none';const audioClick=new Audio();audioClick.preload='none';
+ const persist=()=>{try{localStorage.setItem('mixoy-effects-v1',JSON.stringify(fx));return true}catch{alert('พื้นที่จัดเก็บในเบราว์เซอร์เต็ม กรุณาใช้ไฟล์เสียงหรือภาพที่เล็กลง');return false}};
+ const panel=document.createElement('div');panel.className='panel';panel.innerHTML=`<h3>🎵 เพลงและเอฟเฟกต์ร้าน</h3>
+ <div class="setting-row"><label>รูปฟีเจอร์ (ลูกค้ากดเพื่อดูภาพขยาย)</label><input type="file" id="fxFeatureFile" accept="image/*"><button class="chip" id="fxClearFeature">ลบรูป</button></div>
+ <div class="setting-row"><label>รูปตกแต่งลอยลงจากด้านบน (PNG/GIF/WebP)</label><input type="file" id="fxFallFile" accept="image/*"><button class="chip" id="fxClearFall">ลบรูป</button><label style="margin-top:8px"><input type="checkbox" id="fxFallEnabled"> เปิดเอฟเฟกต์รูปตก</label><label>รูปแบบการตก</label><select class="field" id="fxSnowMode"><option value="continuous">ตกต่อเนื่องเหมือนหิมะ</option><option value="click">ตกเฉพาะเมื่อกดรูป</option></select><label>จำนวนรูปบนจอ (โดยประมาณ)</label><input class="fx-range" id="fxSnowCount" type="range" min="3" max="35" value="12"><label>ความเร็วในการตก (วินาที)</label><input class="fx-range" id="fxSnowSpeed" type="range" min="3" max="14" value="6"><label>ขนาดรูป (พิกเซล)</label><input class="fx-range" id="fxSnowSize" type="range" min="15" max="90" value="38"><p class="note">ใช้ PNG โปร่งใสเพื่อให้เหมือนหิมะหรือหัวใจลอยตก</p></div>
+ <div class="setting-row"><label>เสียงเมื่อกดรูปหรือปุ่มฟีเจอร์ (MP3/WAV/OGG)</label><input type="file" id="fxClickFile" accept="audio/*"><button class="chip" id="fxClearClick">ลบเสียง</button><label>ระดับเสียงเอฟเฟกต์ <output id="fxSoundOutput"></output>%</label><input class="fx-range" type="range" id="fxSoundVolume" min="0" max="100"></div>
+ <div class="setting-row"><label>เพลงประจำร้าน (MP3/WAV/OGG)</label><input type="file" id="fxMusicFile" accept="audio/*"><button class="chip" id="fxClearMusic">ลบเพลง</button><label>วิธีเล่นเพลง</label><select class="field" id="fxMusicMode"><option value="manual">ให้ลูกค้ากดเล่นเอง</option><option value="auto">ลองเล่นอัตโนมัติเมื่อเข้าหน้าเว็บ</option></select><label>ความดังเพลง <output id="fxMusicOutput"></output>%</label><input class="fx-range" type="range" id="fxMusicSettingVolume" min="0" max="100"></div>
+ <div class="setting-row"><label>จำนวนแต้มที่ได้รับต่อคำสั่งซื้อ</label><input class="field" id="fxPointsPerOrder" type="number" min="0" step="1"><label>แต้มที่ต้องใช้แลกรางวัล</label><input class="field" id="fxPointsRedeem" type="number" min="1" step="1"></div><button class="primary" id="fxSave">บันทึกเพลง เอฟเฟกต์ และแต้ม</button><p class="note">ไฟล์ขนาดใหญ่จะเก็บในเบราว์เซอร์ได้จำกัด และการเล่นเพลงอัตโนมัติพร้อมเสียงอาจถูกเบราว์เซอร์บล็อก</p>`;
+ document.querySelector('#editor').appendChild(panel);
+ const feature=document.createElement('div');feature.className='panel';feature.innerHTML='<h3>♡ ฟีเจอร์ร้าน</h3><div id="fxFeatureArea"></div><button class="chip" id="fxFeatureButton">♡ เปิดฟีเจอร์ร้าน</button><p class="note">แตะรูปเพื่อดูรูปขยาย พร้อมเอฟเฟกต์ที่ร้านตั้งค่าไว้</p>';
+ document.querySelector('#home').appendChild(feature);
+ const musicControl=document.getElementById('fxMusicControl');
+ function setupAudio(){audioMusic.src=fx.music||'';audioMusic.volume=fx.musicVolume/100;audioClick.src=fx.clickSound||'';audioClick.volume=fx.soundVolume/100;musicControl.classList.toggle('hidden',!fx.music);$('fxMusicVolume').value=fx.musicVolume}
+ function draw(){const area=$('fxFeatureArea');area.innerHTML=fx.featureImage?'<img class="fx-banner" id="fx-feature-image" alt="รูปฟีเจอร์ร้าน" tabindex="0">':'<p class="note">เจ้าของร้านยังไม่ได้เพิ่มรูปฟีเจอร์</p>';if(fx.featureImage){$('fx-feature-image').src=fx.featureImage;$('fx-feature-image').onclick=activate;$('fx-feature-image').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate()}}}for(const [id,value] of Object.entries({fxFallEnabled:fx.fallEnabled,fxSoundVolume:fx.soundVolume,fxMusicMode:fx.musicMode,fxMusicSettingVolume:fx.musicVolume,fxPointsPerOrder:fx.pointsPerOrder,fxPointsRedeem:fx.pointsRedeem,fxSnowMode:fx.snowMode,fxSnowCount:fx.snowCount,fxSnowSpeed:fx.snowSpeed,fxSnowSize:fx.snowSize})){$(id)[id==='fxFallEnabled'?'checked':'value']=value}$('fxSoundOutput').textContent=fx.soundVolume;$('fxMusicOutput').textContent=fx.musicVolume;setupAudio();syncSnow()}
+ let snowTimer=null;
+ function spawnSnow(){if(!fx.fallEnabled||!fx.fallImage)return;const layer=$('fxDropLayer');if(layer.childElementCount>70)return;const img=document.createElement('img');img.className='fx-falling';img.src=fx.fallImage;img.style.left=(Math.random()*94)+'%';img.style.width=fx.snowSize*(.7+Math.random()*.6)+'px';img.style.maxHeight='none';const duration=fx.snowSpeed*(.75+Math.random()*.6);img.style.animation='fallMixoy '+duration+'s linear forwards';img.style.opacity='.85';layer.appendChild(img);setTimeout(()=>img.remove(),duration*1000+300)}
+ function syncSnow(){if(snowTimer){clearInterval(snowTimer);snowTimer=null}if(fx.fallEnabled&&fx.fallImage&&fx.snowMode==='continuous'){snowTimer=setInterval(spawnSnow,Math.max(130,fx.snowSpeed*1000/fx.snowCount));for(let i=0;i<Math.min(6,fx.snowCount);i++)setTimeout(spawnSnow,i*190)}}
+ function fall(){if(!fx.fallEnabled||fx.snowMode!=='click')return;for(let i=0;i<12;i++)setTimeout(spawnSnow,i*100)}
+ function clickSound(){if(!fx.clickSound)return;audioClick.currentTime=0;audioClick.play().catch(()=>{})}
+ function activate(event){
+  clickSound();fall();
+  if(!fx.featureImage){modal('<h3>♡ ฟีเจอร์ร้าน</h3><p>ยังไม่มีรูปฟีเจอร์</p>');return}
+  if(fx.clickDisplay==='modal'){
+    const image=document.createElement('img');image.src=fx.featureImage;
+    image.style.cssText='width:100%;max-height:65vh;object-fit:contain';
+    modal('<h3>♡ ฟีเจอร์ร้าน</h3>');$('modaltext').appendChild(image);return;
+  }
+  // เอฟเฟกต์ตามวิดีโอ: รูป PNG ปรากฏตรงจุดที่แตะ ลอยขึ้นแล้วจางหาย
+  const img=document.createElement('img');img.src=fx.featureImage;
+  img.className='mixoy-click-sticker';
+  const x=event&&Number.isFinite(event.clientX)?event.clientX:innerWidth/2;
+  const y=event&&Number.isFinite(event.clientY)?event.clientY:innerHeight/2;
+  img.style.left=x+'px';img.style.top=y+'px';
+  img.style.width=(fx.clickSize||95)+'px';
+  document.body.appendChild(img);
+  img.addEventListener('animationend',()=>img.remove(),{once:true});
+  setTimeout(()=>img.remove(),2200);
+}
+ $('fxFeatureButton').onclick=activate;
+ function loadFile(id,key,types,maxBytes){$(id).onchange=e=>{const f=e.target.files[0];if(!f)return;if(!types.some(t=>f.type.startsWith(t)))return alert('ชนิดไฟล์ไม่รองรับ');if(f.size>maxBytes)return alert('ไฟล์ใหญ่เกินไปสำหรับตัวอย่างนี้ (สูงสุด '+(maxBytes/1048576).toFixed(1)+' MB)');const reader=new FileReader();reader.onload=()=>{const previous=fx[key];fx[key]=reader.result;if(!persist()){fx[key]=previous;return}draw();alert('อัปโหลดเรียบร้อยค่ะ')};reader.readAsDataURL(f)}}
+ loadFile('fxFeatureFile','featureImage',['image/'],1000000);loadFile('fxFallFile','fallImage',['image/'],1000000);loadFile('fxClickFile','clickSound',['audio/'],650000);loadFile('fxMusicFile','music',['audio/'],1100000);
+ for(const [button,key] of [['fxClearFeature','featureImage'],['fxClearFall','fallImage'],['fxClearClick','clickSound'],['fxClearMusic','music']])$(button).onclick=()=>{fx[key]='';persist();draw()};
+ $('fxSoundVolume').oninput=e=>$('fxSoundOutput').textContent=e.target.value;$('fxMusicSettingVolume').oninput=e=>$('fxMusicOutput').textContent=e.target.value;
+ $('fxSave').onclick=()=>{fx.fallEnabled=$('fxFallEnabled').checked;fx.soundVolume=Number($('fxSoundVolume').value);fx.musicMode=$('fxMusicMode').value;fx.musicVolume=Number($('fxMusicSettingVolume').value);fx.snowMode=$('fxSnowMode').value;fx.snowCount=Number($('fxSnowCount').value);fx.snowSpeed=Number($('fxSnowSpeed').value);fx.snowSize=Number($('fxSnowSize').value);fx.pointsPerOrder=Math.max(0,Math.floor(Number($('fxPointsPerOrder').value)||0));fx.pointsRedeem=Math.max(1,Math.floor(Number($('fxPointsRedeem').value)||1));persist();draw();alert('บันทึกแล้วค่ะ')};
+ $('fxMusicToggle').onclick=()=>{if(audioMusic.paused){audioMusic.play().then(()=>{$('fxMusicToggle').textContent='❚❚'}).catch(()=>alert('กรุณากดเล่นเพลงอีกครั้ง'))}else{audioMusic.pause();$('fxMusicToggle').textContent='▶'}};
+ $('fxMusicVolume').oninput=e=>{fx.musicVolume=Number(e.target.value);audioMusic.volume=fx.musicVolume/100;$('fxMusicSettingVolume').value=fx.musicVolume;$('fxMusicOutput').textContent=fx.musicVolume;persist()};
+ const oldPoints=$('points').onclick;$('points').onclick=()=>{clickSound();modal('<h3>⭐ สะสมแต้ม</h3><p>แต้มตัวอย่าง: '+Number(data.points||0)+' แต้ม</p><p>ได้รับ '+fx.pointsPerOrder+' แต้มต่อคำสั่งซื้อ</p><p>ใช้ '+fx.pointsRedeem+' แต้มเพื่อแลกรางวัล</p><p class="note">การสะสมและแลกแต้มจริงต้องมีบัญชีลูกค้าและฐานข้อมูลออนไลน์</p>')};
+ const oldCheckout=$('checkout').onclick;$('checkout').onclick=()=>{const count=cart.length;oldCheckout();if(count)clickSound()};
+ let attempted=false;function tryAuto(){if(attempted||fx.musicMode!=='auto'||!fx.music)return;attempted=true;audioMusic.play().then(()=>{$('fxMusicToggle').textContent='❚❚'}).catch(()=>{$('fxMusicToggle').textContent='▶'})}
+ document.addEventListener('pointerdown',()=>{if(!attempted)tryAuto()},{once:true});
+ // ตัวเลือกวิธีแสดงรูปเมื่อคลิก
+ fx.clickDisplay ||= 'float';fx.clickSize ||= 95;
+ const fxOptions=document.createElement('div');fxOptions.className='panel';
+ fxOptions.innerHTML='<h3>✨ รูปปรากฏเมื่อคลิก (ตามวิดีโอ)</h3><label>ลักษณะการแสดง<select id="mixoyClickDisplay" class="field"><option value="float">รูปเด้งตรงที่คลิก ลอยขึ้นและหายไป</option><option value="modal">เปิดรูปใหญ่ตรงกลางหน้าจอ</option></select></label><label>ขนาดรูปเอฟเฟกต์ (พิกเซล)<input id="mixoyClickSize" type="range" min="40" max="220" step="5" class="field"></label><p class="note">ใช้รูปที่อัปโหลดในช่องรูปฟีเจอร์ร้าน แนะนำ PNG โปร่งใส เพื่อให้เหมือนตัวอย่างในวิดีโอ</p><button class="primary" id="mixoySaveClick">บันทึกเอฟเฟกต์คลิก</button>';
+ const fxSaveButton=$('fxSave');fxSaveButton.parentElement.after(fxOptions);
+ $('mixoyClickDisplay').value=fx.clickDisplay;
+ $('mixoyClickSize').value=fx.clickSize;
+ $('mixoySaveClick').onclick=()=>{fx.clickDisplay=$('mixoyClickDisplay').value;fx.clickSize=Number($('mixoyClickSize').value);persist();alert('บันทึกเอฟเฟกต์คลิกแล้วค่ะ')};
+ draw();if(fx.musicMode==='auto')tryAuto();
+})();
+</script><style>
+.review-launch{display:block;width:100%;border:0;background:transparent;padding:0;cursor:pointer}.review-launch img{display:block;width:100%;max-height:160px;object-fit:contain}.review-launch-text{display:block;padding:14px;background:#f8dce8;border-radius:16px;font-weight:700}.review-card-new{position:relative;background:#ffffffed;border-radius:23px;padding:17px;margin:14px 0;box-shadow:0 6px 18px #39233316;overflow:hidden}.review-card-new .review-head{display:flex;align-items:center;gap:10px}.review-card-new .review-avatar{width:42px;height:42px;border-radius:50%;object-fit:cover;background:#f6d9e5}.review-card-new .review-date{font-size:11px;color:#8d7b86}.review-card-new .review-stars{margin-left:auto;color:#d05d90;white-space:nowrap}.review-card-new .review-message{background:#f8f5f7;border:1px solid #e8dce2;border-radius:13px;padding:12px;margin-top:13px;white-space:pre-wrap;overflow-wrap:anywhere}.review-card-new .review-photo{width:100%;max-height:260px;object-fit:contain;border-radius:12px;margin-top:12px}.review-card-new .review-decor{position:absolute;right:0;top:0;width:70px;max-height:90px;object-fit:contain;pointer-events:none}.review-pages{display:flex;justify-content:center;gap:7px;flex-wrap:wrap}.review-pages button{border:1px solid #eed4df;border-radius:11px;background:white;padding:8px 12px}.review-pages button.active{background:var(--pink)}
+</style>
+<script>
+/* หน้ารวมรีวิวใหม่: การตั้งค่ารูปปุ่ม รีวิว และของตกแต่ง เก็บในเบราว์เซอร์ */
+(()=>{
+ const KEY='mixoy-review-page-v2';let prefs={};try{prefs=JSON.parse(localStorage.getItem(KEY)||'{}')}catch{};
+ const store=()=>{try{localStorage.setItem(KEY,JSON.stringify(prefs))}catch{alert('พื้นที่จัดเก็บเต็ม กรุณาใช้รูปขนาดเล็กลง')}};
+ let page=1;const perPage=5;
+ const reviewPage=document.createElement('section');reviewPage.id='reviewpage';reviewPage.className='screen hidden';reviewPage.innerHTML='<div class="top"><h2>♡ รีวิวจากลูกค้า</h2><button class="chip" id="reviewBack">← กลับ</button></div><div id="reviewCardsNew"></div><div class="review-pages" id="reviewPagination"></div><div class="panel" style="margin-top:18px"><h3>✍️ ส่งรีวิว</h3><p class="note">กรอกรีวิวที่หน้าแรก ระบบจะแสดงทันทีหลังส่ง</p><button class="primary" id="reviewGoForm">ไปเขียนรีวิว</button></div>';
+ document.querySelector('#settings').before(reviewPage);
+ const launch=document.createElement('button');launch.type='button';launch.className='review-launch';launch.id='reviewLaunch';
+ const reviews=$('reviews');reviews.before(launch);
+ const oldList=$('approvedReviewList');if(oldList)oldList.classList.add('hidden');reviews.classList.add('hidden');
+ function drawLaunch(){launch.innerHTML=prefs.buttonImage?'<img alt="เปิดหน้ารีวิวลูกค้า">':'<span class="review-launch-text">♡ กดดูรีวิวลูกค้า →</span>';if(prefs.buttonImage)launch.querySelector('img').src=prefs.buttonImage}
+ function showReview(){for(const id of ['home','products','chat','queue','settings'])$(id).classList.add('hidden');reviewPage.classList.remove('hidden');if(document.getElementById('reviewCardsNew'))drawCards();window.scrollTo(0,0)}
+ launch.onclick=showReview;$('reviewBack').onclick=()=>{reviewPage.classList.add('hidden');show('home')};$('reviewGoForm').onclick=()=>{reviewPage.classList.add('hidden');show('home');$('reviewCustomer').scrollIntoView({behavior:'smooth',block:'center'})};
+ const originalShow=window.show;window.show=function(id){reviewPage.classList.add('hidden');return originalShow(id)};
+ function drawCards(){const items=(addon.reviews||[]).filter(r=>r.approved).slice().sort((a,b)=>new Date(b.date||0)-new Date(a.date||0));const perPage=Math.max(1,Math.min(20,Number(prefs.perPage)||5));const pages=Math.max(1,Math.ceil(items.length/perPage));page=Math.min(page,pages);const subset=items.slice((page-1)*perPage,page*perPage);$('reviewCardsNew').innerHTML=subset.length?subset.map(r=>{const date=r.date?new Date(r.date).toLocaleDateString('th-TH',{day:'numeric',month:'short',year:'numeric'}):'รีวิวจากลูกค้า';return '<article class="review-card-new">'+(prefs.cardDecor?'<img class="review-decor" src="'+prefs.cardDecor+'" alt="">':'')+'<div class="review-head"><img class="review-avatar" src="'+(r.photo||imagePlaceholder)+'" alt=""><div><strong>'+escapeHtml(r.customer||'ลูกค้า')+'</strong><div class="review-date">'+escapeHtml(date)+'</div></div><div class="review-stars">'+('★'.repeat(Number(r.rating)||0))+'</div></div><div class="review-message">'+escapeHtml(r.text)+'</div>'+(r.photo?'<img class="review-photo" src="'+r.photo+'" alt="รูปรีวิว">':'')+'</article>'}).join(''):'<div class="panel">ยังไม่มีรีวิวที่ได้รับการอนุมัติค่ะ</div>';
+ $('reviewPagination').innerHTML=Array.from({length:pages},(_,i)=>'<button data-page="'+(i+1)+'" class="'+(page===i+1?'active':'')+'">'+(i+1)+'</button>').join('');$('reviewPagination').querySelectorAll('button').forEach(b=>b.onclick=()=>{page=Number(b.dataset.page);drawCards();window.scrollTo(0,0)})}
+ const config=document.createElement('div');config.className='panel';config.innerHTML='<h3>🖼️ ตกแต่งหน้ารีวิว</h3><label>สีพื้นหลังหน้ารีวิว<input class="field" type="color" id="reviewBgColor" value="#ededed"></label><label>จำนวนรีวิวต่อหน้า<select class="field" id="reviewPerPage"><option value="3">3 รีวิว</option><option value="4">4 รีวิว</option><option value="5">5 รีวิว</option><option value="10">10 รีวิว</option></select></label><label>รูปปุ่มกดเปิดรีวิว (เลือกเองได้)<input type="file" id="reviewButtonUpload" accept="image/*"></label><button class="chip" id="reviewButtonClear">ลบรูปปุ่ม</button><hr><label>รูปตกแต่งมุมการ์ดรีวิว PNG<input type="file" id="reviewCardDecorUpload" accept="image/png,image/webp"></label><button class="chip" id="reviewDecorClear">ลบรูปตกแต่ง</button><p class="note">การ์ดรีวิวจะแสดงชื่อ วันที่ คะแนนดาว และข้อความแบบในวิดีโอ พร้อมแบ่งหน้าอัตโนมัติ</p>';
+ $('reviewAdmin').parentElement.appendChild(config);$('reviewBgColor').value=prefs.bgColor||'#ededed';$('reviewPerPage').value=String(prefs.perPage||5);$('reviewBgColor').oninput=e=>{prefs.bgColor=e.target.value;reviewPage.style.background=prefs.bgColor;store()};$('reviewPerPage').onchange=e=>{prefs.perPage=Number(e.target.value);page=1;store();drawCards()};reviewPage.style.background=prefs.bgColor||'#ededed';
+ function bindUpload(id,key){$(id).onchange=e=>{const f=e.target.files[0];if(!f)return;if(f.size>900000)return alert('กรุณาใช้รูปขนาดไม่เกิน 900 KB');const reader=new FileReader();reader.onload=()=>{prefs[key]=reader.result;store();drawLaunch();drawCards()};reader.readAsDataURL(f)}}
+ bindUpload('reviewButtonUpload','buttonImage');bindUpload('reviewCardDecorUpload','cardDecor');
+ $('reviewButtonClear').onclick=()=>{delete prefs.buttonImage;store();drawLaunch()};$('reviewDecorClear').onclick=()=>{delete prefs.cardDecor;store();drawCards()};
+ const oldDraw=window.drawReviews;window.drawReviews=function(){oldDraw();if(document.getElementById('reviewCardsNew'))drawCards()};
+ // Store a date for reviews submitted from this version onward.
+ const oldSubmit=$('submitReview').onclick;$('submitReview').onclick=()=>{const before=addon.reviews.length;oldSubmit();setTimeout(()=>{if(addon.reviews.length>before){addon.reviews[addon.reviews.length-1].date=new Date().toISOString();persistAddon();if(document.getElementById('reviewCardsNew'))drawCards()}},150)};
+ drawLaunch();drawCards();
+})();
+</script>
+<style>
+.cover-back{border-radius:20px;min-height:var(--cover-height,300px);background-position:var(--cover-position,center);background-size:cover;background-repeat:no-repeat;display:flex;flex-direction:column;justify-content:center;padding:20px 8px;position:relative;isolation:isolate;overflow:visible}
+.cover-back::before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,#ffffff22,#ffffff55);z-index:-1;pointer-events:none}
+.cover-back .avatar-wrap{flex-shrink:0}
+</style>
+<script>
+// Cover photo behind the circular profile, independent of page background.
+(function(){
+ const oldRender=render;
+ render=function(){oldRender();const cover=$('coverBack');cover.style.backgroundImage=data.coverImage?'url('+JSON.stringify(data.coverImage)+')':'none';cover.style.setProperty('--cover-height',(Number(data.coverHeight)||300)+'px');cover.style.setProperty('--cover-position',data.coverPosition||'center')};
+ const oldFill=fillEditor;
+ fillEditor=function(){oldFill();$('coverheight').value=data.coverHeight||300;$('coverposition').value=data.coverPosition||'center'};
+ $('removecover').onclick=()=>{data.coverImage='';saveData();render()};
+ $('coverheight').oninput=e=>{data.coverHeight=Number(e.target.value);saveData();render()};
+ $('coverposition').onchange=e=>{data.coverPosition=e.target.value;saveData();render()};
+ render();
+})();
+</script>
+
+<style>
+/* Compact cover with overlapping circular avatar */
+#home .hero{padding:14px 4px 8px}
+#home .cover-back{height:var(--cover-height,175px);min-height:0;max-height:320px;padding:0;border-radius:24px;background-color:#f8e7ef;background-size:cover;background-position:var(--cover-position,center);display:block;position:relative;margin-bottom:calc(var(--avatar-size,108px) * .56 + 14px);overflow:visible}
+#home .cover-back::before{border-radius:24px;background:transparent}
+#home .cover-back .avatar-wrap{position:absolute;left:50%;bottom:calc(var(--avatar-size,108px) * -.5);transform:translateX(-50%);width:var(--avatar-size,108px);height:var(--avatar-size,108px);margin:0;z-index:2}
+#home .cover-back .avatar{border:4px solid white;box-shadow:0 3px 12px #65445533}
+#home .shopname{font-size:clamp(23px,6vw,30px);margin:8px 0 0}
+#home .welcome{margin-top:5px}
+</style>
+<script>
+(function(){
+  const cover=document.getElementById('coverBack');
+  const hero=cover.parentElement;
+  // Keep shop title below the cover and overlapping profile photo.
+  hero.appendChild(document.getElementById('shopname'));
+  hero.appendChild(document.getElementById('welcome'));
+  const settings=document.createElement('div');
+  settings.className='setting-row';
+  settings.innerHTML='<label for="avatarSizeSlider">ขนาดวงกลมโปรไฟล์: <output id="avatarSizeOutput">108</output> px</label><input id="avatarSizeSlider" type="range" min="70" max="180" step="2" style="width:100%"><label for="compactCoverSlider">ความสูงปกหลังวงกลม: <output id="compactCoverOutput">175</output> px</label><input id="compactCoverSlider" type="range" min="110" max="320" step="5" style="width:100%"><small>วงกลมจะซ้อนอยู่ตรงกลางขอบล่างของปก ตามรูปตัวอย่าง</small>';
+  const coverInput=document.getElementById('coverfile');
+  coverInput.closest('.setting-row').appendChild(settings);
+  function apply(){
+    const av=Math.max(70,Math.min(180,Number(data.avatarSize)||108));
+    const ch=Math.max(110,Math.min(320,Number(data.coverHeight)||175));
+    cover.style.setProperty('--avatar-size',av+'px');
+    cover.style.setProperty('--cover-height',ch+'px');
+    document.getElementById('avatarSizeSlider').value=av;
+    document.getElementById('compactCoverSlider').value=ch;
+    document.getElementById('avatarSizeOutput').textContent=av;
+    document.getElementById('compactCoverOutput').textContent=ch;
+    const oldHeight=document.getElementById('coverheight');if(oldHeight)oldHeight.value=ch;
+  }
+  const slider=document.getElementById('avatarSizeSlider');
+  slider.addEventListener('input',()=>{data.avatarSize=Number(slider.value);apply();saveData()});
+  const hslider=document.getElementById('compactCoverSlider');
+  hslider.addEventListener('input',()=>{data.coverHeight=Number(hslider.value);apply();saveData()});
+  if(!data.compactCoverInitialized){data.coverHeight=175;data.avatarSize=108;data.compactCoverInitialized=true;saveData()}
+  const previousRender=render;render=function(){previousRender();apply()};
+  apply();render();
+})();
+</script>
+<style>
+/* Review page redesign only */
+#reviewpage{background:#ededed!important;color:#262626;min-height:100dvh;padding:20px 16px 100px}
+#reviewpage .review-title{text-align:center;color:#858585;font-size:23px;font-weight:700;margin:10px 0 18px}
+#reviewpage .write-review-btn{display:block;margin:0 auto 22px;border:1px solid #d3d3d3;background:#e4e4e4;color:#222;border-radius:30px;padding:12px 30px;font-weight:700}
+#reviewpage .rating-summary{background:#fff;border:1px solid #ddd;border-radius:27px;padding:25px 18px;display:grid;grid-template-columns:38% 62%;align-items:center;gap:4px;margin-bottom:22px;box-shadow:0 6px 18px #00000009}
+#reviewpage .rating-big{text-align:center;font:700 58px Arial,sans-serif}#reviewpage .rating-big small{display:block;font:14px Arial;color:#777;margin-top:7px}#reviewpage .rating-big .stars-line{font:24px Arial;color:#626262;letter-spacing:-2px;margin-top:4px}
+#reviewpage .rating-bars{padding-right:8px}#reviewpage .rating-bar{display:grid;grid-template-columns:37px 1fr 24px;gap:6px;align-items:center;font-size:13px;color:#777;margin:9px 0}#reviewpage .rating-track{height:12px;background:#ddd;border-radius:12px;overflow:hidden}#reviewpage .rating-fill{height:100%;background:#898989;border-radius:12px}
+#reviewpage .review-card-custom{background:#fff;border:1px solid #e0e0e0;border-radius:26px;padding:20px 18px;margin:17px 0;box-shadow:0 8px 18px #0000000c;position:relative}
+#reviewpage .review-person{display:flex;align-items:center;gap:11px;min-height:48px}#reviewpage .review-person img{height:47px;width:47px;object-fit:cover;border-radius:50%;border:2px solid #eee}#reviewpage .review-person .review-meta{flex:1;min-width:0}#reviewpage .review-person .review-date{color:#888;font-size:12px}#reviewpage .review-person .review-score{color:#5e5e5e;font-size:19px;white-space:nowrap}
+#reviewpage .review-quote{margin-top:22px;border:1px solid #d5d5d5;border-radius:14px;background:#f3f3f3;padding:17px 15px;font-weight:600;white-space:pre-wrap;overflow-wrap:anywhere}#reviewpage .review-photo-custom{max-width:100%;max-height:260px;object-fit:contain;border-radius:13px;margin-top:12px}#reviewpage .review-decor-custom{position:absolute;right:5px;top:4px;width:65px;pointer-events:none}#reviewpage .review-pages{margin-top:20px}
+#reviewWriteOverlay{position:fixed;inset:0;z-index:90;background:#0009;display:none;align-items:center;justify-content:center;padding:18px}#reviewWriteOverlay.open{display:flex}#reviewWriteDialog{background:#fff;border:1px solid #ddd;border-radius:27px;padding:25px 22px;max-width:430px;width:100%;max-height:90dvh;overflow:auto;color:#252525;box-shadow:0 12px 35px #0002}#reviewWriteDialog h2{text-align:center;font-size:25px;font-weight:500;margin:5px 0}#reviewWriteDialog .sub{text-align:center;color:#888;font-size:13px;margin-bottom:23px}#reviewWriteDialog label{display:block;font-weight:600;color:#777;font-size:14px;margin-top:13px}#reviewWriteDialog .field,#reviewWriteDialog input[type=file]{width:100%;background:#f3f3f3;border:1px solid #d8d8d8;border-radius:14px;padding:12px;margin:7px 0 10px;color:#222}#reviewWriteDialog textarea{min-height:105px;resize:vertical}#reviewWriteDialog .stars{justify-content:center;margin:14px 0}#reviewWriteDialog .stars button{background:transparent;color:#dfa997;font-size:31px;padding:2px}#reviewWriteDialog .stars button.chosen{background:transparent}#reviewWriteDialog #submitReview{width:100%;background:#ddd;color:#222;border-radius:15px;padding:14px;margin-top:15px}#reviewWriteDialog .close-review{float:right;background:transparent;border:0;font-size:23px}
+@media(max-width:360px){#reviewpage .rating-big{font-size:43px}#reviewpage .rating-summary{padding:17px 9px}#reviewpage .rating-bar{grid-template-columns:30px 1fr 18px;gap:3px}}
+</style>
+<script>
+/* Visual-only review overhaul, preserving all other store sections. New reviews publish immediately. */
+(()=>{
+ const rp=document.getElementById('reviewpage'), launch=document.getElementById('reviewLaunch');
+ if(!rp||!launch)return;
+ const oldPageControls=rp.querySelector('#reviewBack');
+ rp.innerHTML='<button class="chip" id="reviewBackNew" style="float:right">← กลับ</button><div style="clear:both"></div><h2 class="review-title">CUSTOMER REVIEWS ♡</h2><button class="write-review-btn" id="openReviewWrite">✎ เขียนรีวิว ♡</button><div class="rating-summary" id="ratingSummary"></div><div id="customReviewCards"></div><div class="review-pages" id="customReviewPages"></div>';
+ document.getElementById('reviewBackNew').onclick=()=>{rp.classList.add('hidden');show('home')};
+ const overlay=document.createElement('div');overlay.id='reviewWriteOverlay';overlay.innerHTML='<div id="reviewWriteDialog" role="dialog" aria-modal="true" aria-label="เขียนรีวิว"><button class="close-review" id="closeReviewWrite" aria-label="ปิด">×</button><h2>Write a Review ♡</h2><p class="sub">ขอบคุณที่มาแบ่งปันความประทับใจนะคะ</p><div id="reviewFormMount"></div></div>';document.body.appendChild(overlay);
+ const form=document.getElementById('submitReview').closest('.extra-card');
+ form.querySelector('h4')?.remove();form.querySelector('.muted')?.remove();
+ const profileLabel=document.createElement('label');profileLabel.textContent='รูปโปรไฟล์ (ไม่บังคับ)';profileLabel.innerHTML='รูปโปรไฟล์ (ไม่บังคับ)<input type="file" id="reviewProfilePhoto" accept="image/*">';
+ form.querySelector('#reviewCustomer').before(profileLabel);
+ document.getElementById('reviewFormMount').appendChild(form);
+ document.getElementById('openReviewWrite').onclick=()=>overlay.classList.add('open');document.getElementById('closeReviewWrite').onclick=()=>overlay.classList.remove('open');overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('open')});
+ let currentPage=1;
+ const safeText=v=>escapeHtml(String(v??''));
+ function draw(){
+  const all=(addon.reviews||[]).filter(r=>r.approved).slice().sort((a,b)=>new Date(b.date||0)-new Date(a.date||0));const count=all.length;const sum=all.reduce((a,r)=>a+(Number(r.rating)||0),0);const avg=count?sum/count:0;
+  const hist=[5,4,3,2,1].map(n=>all.filter(r=>Number(r.rating)===n).length);
+  document.getElementById('ratingSummary').innerHTML='<div class="rating-big">'+avg.toFixed(1)+'<div class="stars-line">'+('★'.repeat(Math.round(avg)))+('☆'.repeat(5-Math.round(avg)))+'</div><small>'+count+' reviews</small></div><div class="rating-bars">'+hist.map((v,i)=>'<div class="rating-bar"><span>'+(5-i)+' ★</span><div class="rating-track"><div class="rating-fill" style="width:'+(count?v/count*100:0)+'%"></div></div><span>'+v+'</span></div>').join('')+'</div>';
+  const perPage=Math.max(1,Math.min(20,Number(document.getElementById('reviewPerPage')?.value)||5));const pages=Math.max(1,Math.ceil(count/perPage));currentPage=Math.min(currentPage,pages);
+  document.getElementById('customReviewCards').innerHTML=all.slice((currentPage-1)*perPage,currentPage*perPage).map(r=>{
+   const date=r.date?new Date(r.date).toLocaleDateString('th-TH',{day:'numeric',month:'short',year:'numeric'}):'';
+   return '<article class="review-card-custom">'+(JSON.parse(localStorage.getItem('mixoy-review-page-v2')||'{}').cardDecor?'<img class="review-decor-custom" src="'+JSON.parse(localStorage.getItem('mixoy-review-page-v2')||'{}').cardDecor+'" alt="">':'')+'<div class="review-person">'+(r.profile?'<img src="'+r.profile+'" alt="รูปโปรไฟล์">':'')+'<div class="review-meta"><strong>'+safeText(r.customer||'ลูกค้า')+'</strong><div class="review-date">'+safeText(date)+'</div></div><div class="review-score">'+('★'.repeat(Number(r.rating)||0))+('☆'.repeat(5-(Number(r.rating)||0)))+'</div></div><div class="review-quote">'+safeText(r.text)+'</div>'+(r.photo?'<img class="review-photo-custom" src="'+r.photo+'" alt="รูปประกอบรีวิว">':'')+'</article>'
+  }).join('')||'<div class="review-card-custom">ยังไม่มีรีวิวค่ะ ♡</div>';
+  document.getElementById('customReviewPages').innerHTML=Array.from({length:pages},(_,i)=>'<button class="'+(currentPage===i+1?'active':'')+'" data-page="'+(i+1)+'">'+(i+1)+'</button>').join('');document.querySelectorAll('#customReviewPages button').forEach(b=>b.onclick=()=>{currentPage=Number(b.dataset.page);draw()});
+ }
+ const originalSubmit=document.getElementById('submitReview');
+ originalSubmit.onclick=async()=>{
+  const button=originalSubmit;
+  const t=document.getElementById('reviewText').value.trim();
+  if(!t){alert('กรุณาเขียนข้อความรีวิวก่อนส่งค่ะ');document.getElementById('reviewText').focus();return;}
+  if(button.disabled)return;
+  button.disabled=true;button.textContent='กำลังส่งรีวิว...';
+  const readImage=async(file)=>{
+   if(!file)return '';
+   if(!file.type.startsWith('image/'))throw new Error('กรุณาเลือกไฟล์รูปภาพ');
+   const url=URL.createObjectURL(file);
+   try{
+    const img=new Image();
+    await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=()=>reject(new Error('ไม่สามารถอ่านไฟล์รูปภาพได้'));img.src=url});
+    const max=640,scale=Math.min(1,max/Math.max(img.naturalWidth,img.naturalHeight));
+    const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.naturalWidth*scale));canvas.height=Math.max(1,Math.round(img.naturalHeight*scale));
+    canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);
+    return canvas.toDataURL('image/jpeg',0.68);
+   }finally{URL.revokeObjectURL(url)}
+  };
+  try{
+   const [photo,profile]=await Promise.all([readImage(document.getElementById('reviewPhoto').files[0]),readImage(document.getElementById('reviewProfilePhoto').files[0])]);
+   const entry={customer:document.getElementById('reviewCustomer').value.trim().slice(0,80),text:t.slice(0,1000),rating:Math.max(1,Math.min(5,Number(reviewRating)||5)),photo,profile,approved:true,date:new Date().toISOString()};
+   addon.reviews.push(entry);
+   try{localStorage.setItem(addonKey,JSON.stringify(addon))}catch(err){addon.reviews.pop();throw new Error('พื้นที่เก็บข้อมูลของเบราว์เซอร์เต็ม ลองส่งรีวิวโดยไม่แนบรูปค่ะ')}
+   document.getElementById('reviewCustomer').value='';document.getElementById('reviewText').value='';document.getElementById('reviewPhoto').value='';document.getElementById('reviewProfilePhoto').value='';
+   overlay.classList.remove('open');try{drawReviews();draw()}catch(renderError){console.error('Review display refresh:',renderError);draw()}alert('ส่งรีวิวสำเร็จ รีวิวแสดงทันทีค่ะ');
+  }catch(err){console.error('Review submit failed:',err);alert('ส่งรีวิวไม่สำเร็จ: '+(err.message||'โปรดลองอีกครั้ง'))}
+  finally{button.disabled=false;button.textContent='ส่งรีวิว ♡'}
+ };
+ const originalDraw=window.drawReviews;window.drawReviews=function(){originalDraw();draw()};
+ launch.addEventListener('click',()=>{currentPage=1;draw()});document.getElementById('reviewPerPage')?.addEventListener('change',draw);draw();
+})();
+</script>
+
+<style>
+/* Clear, accessible rating selector in review dialog */
+#reviewWriteDialog #reviewStars{display:flex!important;justify-content:center;align-items:center;gap:7px;margin:12px 0 5px}
+#reviewWriteDialog #reviewStars button{appearance:none!important;border:0!important;background:transparent!important;font-family:Arial,sans-serif!important;font-size:38px!important;line-height:1.2!important;padding:4px!important;min-width:43px;min-height:48px;cursor:pointer;color:#c9c9c9!important;opacity:1!important;transition:transform .12s,color .12s}
+#reviewWriteDialog #reviewStars button.chosen{color:var(--rv-stars,#dfa997)!important}
+#reviewWriteDialog #reviewStars button:focus-visible{outline:2px solid var(--rv-stars,#dfa997);border-radius:8px}
+#reviewWriteDialog .rating-hint{text-align:center;font-size:13px;color:var(--rv-muted,#858585);margin:0 0 14px}
+</style>
+<script>
+(function(){
+ const stars=document.getElementById('reviewStars');if(!stars)return;
+ const hint=document.createElement('p');hint.className='rating-hint';hint.id='ratingHint';stars.insertAdjacentElement('afterend',hint);
+ function updateHint(){const chosen=stars.querySelectorAll('button.chosen').length;hint.textContent='เลือกคะแนน '+chosen+' จาก 5 ดาว (แตะดาวเพื่อเปลี่ยนคะแนน)';stars.querySelectorAll('button').forEach((b,i)=>{b.setAttribute('aria-pressed',String(i<chosen));b.title=(i+1)+' ดาว'})}
+ stars.addEventListener('click',()=>requestAnimationFrame(updateHint));
+ const open=document.getElementById('openReviewWrite');if(open)open.addEventListener('click',()=>requestAnimationFrame(updateHint));
+ updateHint();
+})();
+</script>
+
+<script>
+/* Editable review heading: isolated from all other settings. */
+(()=>{
+ const key='mixoy-review-heading-v1';
+ const defaultTitle='CUSTOMER REVIEWS ♡';
+ const getTitle=()=>{try{return localStorage.getItem(key)||defaultTitle}catch{return defaultTitle}};
+ const applyTitle=()=>document.querySelectorAll('#reviewpage .review-title').forEach(el=>{el.textContent=getTitle()});
+ const admin=document.getElementById('reviewAdmin');
+ if(admin){
+  const wrapper=document.createElement('div');wrapper.className='setting-row';
+  const label=document.createElement('label');label.textContent='แก้ไขข้อความหัวข้อหน้ารีวิว';
+  const input=document.createElement('input');input.className='field';input.id='customReviewHeading';input.type='text';input.maxLength=100;input.value=getTitle();input.placeholder=defaultTitle;
+  label.appendChild(input);wrapper.appendChild(label);admin.parentElement.appendChild(wrapper);
+  input.addEventListener('input',()=>{try{localStorage.setItem(key,input.value||defaultTitle)}catch{}applyTitle()});
+ }
+ const observer=new MutationObserver(()=>applyTitle());
+ const page=document.getElementById('reviewpage');if(page)observer.observe(page,{childList:true,subtree:false});
+ applyTitle();
+})();
+</script>
+
+
+<style>
+/* รีวิวแนวมินิมอลตามวิดีโอ: การ์ดขาว พื้นหลังเทาอ่อน */
+#reviewpage{min-height:calc(100dvh - 78px);border-radius:0 0 26px 26px;padding:20px 18px 32px}#reviewpage .top{margin-bottom:16px}#reviewpage .top h2{font-size:22px;margin:6px 0 14px}#reviewpage .review-card-new{background:#fff;border-radius:25px;padding:18px 17px;margin:0 0 14px;box-shadow:0 6px 16px #0000000d;min-height:145px;overflow:visible}#reviewpage .review-head{min-height:52px;align-items:flex-start}#reviewpage .review-head strong{font-size:14px}#reviewpage .review-date{font-size:11px;margin-top:4px;color:#888}#reviewpage .review-avatar{width:38px;height:38px}#reviewpage .review-stars{color:#363636;font-size:15px;padding-right:48px}#reviewpage .review-message{background:#f5f5f5;border:1px solid #d8d8d8;border-radius:14px;margin-top:16px;padding:13px 12px;font-size:13px;line-height:1.7;color:#292929}#reviewpage .review-decor{right:-5px;top:-10px;width:82px;max-height:85px;z-index:2}#reviewpage .review-pages{padding:16px 0 8px;gap:8px}#reviewpage .review-pages button{background:white;border:1px solid #dedede;border-radius:12px;min-width:39px;min-height:39px;font-weight:600}#reviewpage .review-pages button.active{background:#d9d9d9;border-color:#d9d9d9}#reviewpage .panel{background:#ffffffd9}
+</style>
+
+
+<style id="mixoyReviewThemeCSS">
+/* Customizable review-only palette; all other shop pages retain their original styles. */
+#reviewpage{background:var(--rv-bg,#ededed)!important;color:var(--rv-text,#262626)!important}
+#reviewpage .review-title{color:var(--rv-muted,#858585)!important}
+#reviewpage .rating-summary,#reviewpage .review-card-custom{background:var(--rv-card,#ffffff)!important;border-color:var(--rv-border,#dddddd)!important;color:var(--rv-text,#262626)!important}
+#reviewpage .rating-big .stars-line,#reviewpage .review-person .review-score{color:var(--rv-stars,#626262)!important}
+#reviewpage .rating-bar,#reviewpage .rating-big small,#reviewpage .review-person .review-date{color:var(--rv-muted,#858585)!important}
+#reviewpage .rating-track{background:var(--rv-track,#dddddd)!important}
+#reviewpage .rating-fill{background:var(--rv-fill,#898989)!important}
+#reviewpage .review-quote{background:var(--rv-quote,#f3f3f3)!important;border-color:var(--rv-border,#dddddd)!important;color:var(--rv-text,#262626)!important}
+#reviewpage .write-review-btn,#reviewpage .review-pages button.active{background:var(--rv-button,#e4e4e4)!important;color:var(--rv-text,#262626)!important;border-color:var(--rv-border,#dddddd)!important}
+#reviewWriteDialog{background:var(--rv-modal,#ffffff)!important;color:var(--rv-text,#262626)!important;border-color:var(--rv-border,#dddddd)!important}
+#reviewWriteDialog .field,#reviewWriteDialog input[type=file]{background:var(--rv-input,#f3f3f3)!important;border-color:var(--rv-border,#dddddd)!important;color:var(--rv-text,#262626)!important}
+#reviewWriteDialog .stars button{color:var(--rv-stars,#dfa997)!important}
+#reviewWriteDialog #submitReview{background:var(--rv-button,#dddddd)!important;color:var(--rv-text,#262626)!important}
+#reviewWriteDialog .sub,#reviewWriteDialog label{color:var(--rv-muted,#858585)!important}
+#reviewpage .review-pages button{border-color:var(--rv-border,#dddddd)!important}
+.rv-theme-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.rv-theme-grid label{font-size:12px;display:block}.rv-theme-grid input[type=color]{width:100%;height:42px;padding:4px;border:1px solid #ddd;border-radius:10px;background:white}.rv-theme-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+</style>
+<script>
+/* Review theme settings only. Saved locally alongside the existing review-page preferences. */
+(function(){
+ const key='mixoy-review-colors-v1';
+ const defaults={bg:'#ededed',card:'#ffffff',quote:'#f3f3f3',text:'#262626',muted:'#858585',stars:'#dfa997',button:'#e4e4e4',modal:'#ffffff',input:'#f3f3f3',border:'#dddddd',track:'#dddddd',fill:'#898989'};
+ const labels={bg:'พื้นหลังหน้ารีวิว',card:'พื้นหลังการ์ดรีวิว',quote:'พื้นหลังข้อความรีวิว',text:'สีตัวอักษร',muted:'สีข้อความรอง',stars:'สีคะแนนดาว',button:'สีปุ่มเขียน/ส่งรีวิว',modal:'พื้นหลังหน้าต่างเขียนรีวิว',input:'สีช่องกรอกข้อมูล',border:'สีเส้นขอบ',track:'สีพื้นกราฟดาว',fill:'สีแถบกราฟดาว'};
+ const presets={reference:{...defaults},nude:{...defaults,bg:'#f6f0ef',quote:'#f9f2f0',stars:'#dca998',button:'#ead5d1',track:'#e9dedb',fill:'#bd9c96'},pink:{...defaults,bg:'#fff0f5',quote:'#fff5f9',stars:'#db83a5',button:'#f4c5d8',track:'#f4dce5',fill:'#d78cab'}};
+ let saved={};try{saved=JSON.parse(localStorage.getItem(key)||'{}')||{}}catch{}
+ let colors={...defaults,...saved};
+ function apply(){for(const [k,v] of Object.entries(colors))document.documentElement.style.setProperty('--rv-'+k,v);const page=document.getElementById('reviewpage');if(page)page.style.setProperty('background',colors.bg,'important')}
+ function persist(){try{localStorage.setItem(key,JSON.stringify(colors))}catch{alert('ไม่สามารถบันทึกสีได้')}}
+ const editor=document.getElementById('editor');if(!editor)return;
+ const panel=document.createElement('div');panel.className='panel';panel.id='reviewThemeSettings';
+ panel.innerHTML='<h3>🎨 ปรับโทนสีหน้ารีวิว</h3><p class="note">ปรับเฉพาะหน้ารีวิวและหน้าต่างเขียนรีวิว ไม่กระทบสีส่วนอื่นของร้าน</p><label>ชุดสีสำเร็จรูป<select id="rvPreset" class="field"><option value="reference">ขาว–เทาอ่อน (ตามภาพตัวอย่าง)</option><option value="nude">ขาว–ชมพูนู้ด</option><option value="pink">ชมพูพาสเทล</option><option value="custom">กำหนดสีเอง</option></select></label><div class="rv-theme-grid" id="rvColorGrid"></div><div class="rv-theme-actions"><button type="button" class="primary" id="rvSave">บันทึกสีรีวิว</button><button type="button" class="chip" id="rvReset">คืนค่าสีตามภาพ</button><button type="button" class="chip" id="rvPreview">ดูหน้ารีวิว</button></div>';
+ const reviewAdmin=document.getElementById('reviewAdmin');reviewAdmin.closest('.panel').after(panel);
+ const grid=panel.querySelector('#rvColorGrid');
+ for(const [k,label] of Object.entries(labels)){
+  const el=document.createElement('label');el.textContent=label;
+  const inp=document.createElement('input');inp.type='color';inp.id='rvColor_'+k;inp.value=colors[k];inp.addEventListener('input',()=>{colors[k]=inp.value;panel.querySelector('#rvPreset').value='custom';apply();persist()});el.appendChild(inp);grid.appendChild(el)
+ }
+ function sync(){for(const k of Object.keys(defaults))panel.querySelector('#rvColor_'+k).value=colors[k]}
+ panel.querySelector('#rvPreset').addEventListener('change',e=>{if(!presets[e.target.value])return;colors={...presets[e.target.value]};sync();apply();persist()});
+ panel.querySelector('#rvSave').onclick=()=>{persist();alert('บันทึกสีหน้ารีวิวเรียบร้อยแล้วค่ะ')};
+ panel.querySelector('#rvReset').onclick=()=>{colors={...defaults};sync();panel.querySelector('#rvPreset').value='reference';apply();persist()};
+ panel.querySelector('#rvPreview').onclick=()=>{document.getElementById('reviewLaunch')?.click()};
+ // Override the original review background color control so both controls stay consistent.
+ const oldBg=document.getElementById('reviewBgColor');if(oldBg){oldBg.value=colors.bg;oldBg.addEventListener('input',()=>{colors.bg=oldBg.value;panel.querySelector('#rvColor_bg').value=colors.bg;panel.querySelector('#rvPreset').value='custom';apply();persist()})}
+ const oldShow=window.show;window.show=function(id){const result=oldShow(id);apply();return result};
+ apply();
+})();
+</script>
+
+
+<style>
+#home .socials{display:flex;flex-wrap:wrap;gap:9px;align-items:stretch}
+#home .socials .mixoy-contact{flex:1 1 105px;min-width:0;display:flex;align-items:center;justify-content:center;gap:7px;text-align:center;min-height:46px;border-radius:15px;background:#302a31;color:#fff;text-decoration:none;padding:7px 9px;overflow:hidden;font-size:13px}
+#home .socials .mixoy-contact img{max-width:100%;width:100%;height:45px;object-fit:contain}
+#home .socials .mixoy-contact:has(img){background:transparent;padding:0}
+#home .socials .mixoy-contact:focus-visible{outline:3px solid var(--pink)}
+.mixoy-contact-row{padding:12px 0;border-bottom:1px solid #ead9e1;display:grid;gap:8px}.mixoy-contact-row .mixoy-actions{display:flex;gap:6px;flex-wrap:wrap}.mixoy-contact-row .mixoy-actions button{border:1px solid #e7c4d4;border-radius:10px;background:#fff;padding:6px 10px}.mixoy-contact-row img{max-width:160px;max-height:65px;object-fit:contain}
+</style>
+<script>
+(function(){
+ const $c=id=>document.getElementById(id);
+ const defaults=[{name:'LINE',url:'https://line.me',image:''},{name:'TikTok',url:'https://www.tiktok.com',image:''},{name:'Instagram',url:'https://www.instagram.com',image:''}];
+ if(!Array.isArray(data.contactItems))data.contactItems=defaults.map(x=>({...x}));
+ function safeUrl(u){try{let x=new URL(u);return ['https:','http:'].includes(x.protocol)?x.href:'#'}catch{return '#'}}
+ function drawContacts(){
+ let el=document.querySelector('#home .socials');if(!el)return;
+ el.replaceChildren();
+ let open=document.createElement('button');open.type='button';open.className='mixoy-contact-entry';open.textContent='♡ ช่องทางการติดต่อ';open.onclick=()=>{drawContactPage();$c('mixoyContactPage').classList.remove('hidden');document.body.style.overflow='hidden'};el.append(open);
+ drawContactPage();
+}
+function drawContactPage(){
+ let list=$c('mixoyContactLinks');if(!list)return;list.replaceChildren();
+ if(!data.contactItems.length){let empty=document.createElement('p');empty.textContent='ยังไม่มีช่องทางติดต่อ';empty.className='muted';list.append(empty)}
+ data.contactItems.forEach((item,i)=>{
+  let url=safeUrl(item.url);let a=document.createElement('a');a.className='mixoy-contact-link';a.title=item.name||'ช่องทางติดต่อ';
+  if(url==='#'){a.href='#';a.onclick=e=>{e.preventDefault();alert('ช่องทางนี้ยังไม่ได้ใส่ลิงก์ติดต่อ')}}else{a.href=url;a.target='_blank';a.rel='noopener noreferrer'}
+  if(item.image){let im=document.createElement('img');im.src=item.image;im.alt=item.name||'ช่องทางติดต่อ';a.append(im)}
+  else{let span=document.createElement('span');span.textContent=item.name||'ช่องทางติดต่อ';a.append(span)}
+  let arrow=document.createElement('span');arrow.textContent='↗';arrow.className='mixoy-contact-arrow';a.append(arrow);list.append(a)
+ });
+}
+ function drawEditor(){let root=$c('mixoyContactEditor');if(!root)return;root.replaceChildren();data.contactItems.forEach((item,i)=>{let wrap=document.createElement('div');wrap.className='mixoy-contact-row';let name=document.createElement('input');name.className='field';name.placeholder='ชื่อช่องทาง';name.value=item.name||'';name.oninput=()=>{item.name=name.value;saveData();drawContacts()};let url=document.createElement('input');url.className='field';url.placeholder='https://...';url.value=item.url||'';url.onchange=()=>{item.url=url.value.trim();saveData();drawContacts()};let label=document.createElement('label');label.textContent='อัปโหลดรูปปุ่ม (ไม่บังคับ)';let file=document.createElement('input');file.type='file';file.accept='image/png,image/jpeg,image/webp,image/gif';file.onchange=()=>{let f=file.files[0];if(!f)return;if(f.size>800000){alert('รูปปุ่มต้องมีขนาดไม่เกิน 800 KB');return}let reader=new FileReader();reader.onload=()=>{item.image=reader.result;try{saveData()}catch(e){alert('พื้นที่บันทึกข้อมูลเต็ม กรุณาใช้รูปขนาดเล็กลง');return}drawContacts();drawEditor()};reader.readAsDataURL(f)};label.append(file);let actions=document.createElement('div');actions.className='mixoy-actions';[['↑',()=>move(i,-1)],['↓',()=>move(i,1)],['ลบรูป',()=>{item.image='';commit()}],['ลบช่องทาง',()=>{data.contactItems.splice(i,1);commit()}]].forEach(([t,fn])=>{let b=document.createElement('button');b.type='button';b.textContent=t;b.onclick=fn;actions.append(b)});let title=document.createElement('b');title.textContent=(i+1)+'. '+(item.name||'ช่องทางใหม่');wrap.append(title,name,url,label);if(item.image){let im=document.createElement('img');im.src=item.image;wrap.append(im)}wrap.append(actions);root.append(wrap)})}
+ function commit(){try{saveData()}catch(e){alert('ไม่สามารถบันทึกข้อมูลได้: '+e.message)}drawContacts();drawEditor()}
+ function move(i,step){let j=i+step;if(j<0||j>=data.contactItems.length)return;[data.contactItems[i],data.contactItems[j]]=[data.contactItems[j],data.contactItems[i]];commit()}
+ const page=document.createElement('div');page.id='mixoyContactPage';page.className='mixoy-contact-page hidden';page.innerHTML='<div class="mixoy-contact-page-inner"><div class="mixoy-contact-head"><button type="button" id="mixoyContactBack" aria-label="กลับหน้าแรก">‹</button><strong>♡ ช่องทางการติดต่อ</strong><span></span></div><p class="mixoy-contact-subtitle">เลือกช่องทางที่ต้องการติดต่อร้านได้เลย ♡</p><div id="mixoyContactLinks"></div></div>';
+ document.body.append(page);
+ $c('mixoyContactBack').onclick=()=>{page.classList.add('hidden');document.body.style.overflow=''};
+ const panel=$c('editline')?.closest('.panel');if(panel){panel.querySelector('h3').textContent='ช่องทางติดต่อ (จัดลำดับและใส่รูปเองได้)';['editline','edittiktok','editinstagram'].forEach(id=>{let input=$c(id);if(input)input.closest('label').style.display='none'});let note=document.createElement('p');note.className='muted';note.textContent='เรียงลำดับจากซ้ายไปขวาตามรายการด้านล่าง กด ↑ ↓ เพื่อเปลี่ยนตำแหน่ง และใส่ลิงก์สำหรับแต่ละปุ่ม';let editor=document.createElement('div');editor.id='mixoyContactEditor';let add=document.createElement('button');add.type='button';add.className='primary';add.textContent='+ เพิ่มช่องทางติดต่อ';add.onclick=()=>{data.contactItems.push({name:'ช่องทางใหม่',url:'',image:''});commit()};panel.append(note,editor,add)}
+ const originalRender=window.render;window.render=function(...args){const r=originalRender.apply(this,args);drawContacts();return r};
+ const originalFill=window.fillEditor;window.fillEditor=function(...args){const r=originalFill.apply(this,args);drawEditor();return r};
+ // Existing settings save remains unchanged; contact entries persist independently.
+ drawContacts();drawEditor();
+})();
+</script>
+<script>
+/* 3Mixoy Cloudflare D1: reviews, shop settings, orders, and chat */
+(async function () {
+  'use strict';
+  const el = id => document.getElementById(id);
+  let isAdmin = false, loading = true, saveTimer, activeOrder = null;
+
+  async function api(path, options = {}) {
+    let response;
+    try {
+      response = await fetch('/api/' + path, {
+        credentials: 'same-origin', ...options,
+        headers: {'Content-Type': 'application/json', ...(options.headers || {})}
+      });
+    } catch (e) {
+      throw new Error('ไม่สามารถเชื่อมต่อเซิร์ฟเวอร์ได้ กรุณาตรวจสอบอินเทอร์เน็ต');
+    }
+    const raw = await response.text();
+    let body;
+    try { body = raw ? JSON.parse(raw) : {}; }
+    catch { throw new Error('API ตอบกลับไม่ใช่ JSON ตรวจสอบ Cloudflare Pages Functions'); }
+    if (!response.ok) throw new Error(body.error || 'HTTP ' + response.status);
+    return body;
+  }
+  const post = (path, body) => api(path, {method:'POST',body:JSON.stringify(body)});
+  const put = (path, body) => api(path, {method:'PUT',body:JSON.stringify(body)});
+
+  const status = document.createElement('div');
+  status.id = 'liveStatus';
+  status.style.cssText = 'position:fixed;top:8px;left:50%;transform:translateX(-50%);z-index:99;background:#fff;border:1px solid #ddd;border-radius:20px;padding:7px 12px;font-size:11px;max-width:90vw;text-align:center';
+  status.textContent = 'กำลังเชื่อมต่อฐานข้อมูล...';
+  document.body.append(status);
+  function showStatus(message, error = false) {
+    status.textContent = (error ? '⚠ ' : '● ') + message;
+    status.style.display = 'block';
+    if (!error) setTimeout(() => status.style.display = 'none', 2500);
+  }
+
+  function refreshReviewUI() {
+    if (typeof window.drawReviews === 'function') window.drawReviews();
+  }
+  function renderAdminReviews() {
+    const admin = el('reviewAdmin');
+    if (!admin || !isAdmin) return;
+    admin.innerHTML = (addon.reviews || []).map(r =>
+      '<div class="extra-card"><b>' + escapeHtml(r.customer || 'ลูกค้า') +
+      '</b> · ' + (Number(r.rating) || 5) + ' ดาว<p>' + escapeHtml(r.text || '') +
+      '</p><button type="button" class="chip" data-live-delete="' + escapeHtml(r.id || '') + '">ลบรีวิว</button></div>'
+    ).join('') || '<p class="muted">ยังไม่มีรีวิว</p>';
+  }
+  async function loadReviews() {
+    const result = await api('reviews');
+    if (!Array.isArray(result.reviews)) throw new Error('ข้อมูลรีวิวจาก API ไม่ถูกต้อง');
+    addon.reviews = result.reviews;
+    refreshReviewUI();
+    renderAdminReviews();
+    return result.reviews;
+  }
+
+  async function convertImage(id) {
+    const file = el(id)?.files?.[0];
+    if (!file) return '';
+    if (!file.type.startsWith('image/')) throw new Error('กรุณาเลือกไฟล์รูปภาพ');
+    if (file.size > 10 * 1024 * 1024) throw new Error('รูปต้องไม่เกิน 10 MB');
+    const url = URL.createObjectURL(file), img = new Image();
+    try {
+      await new Promise((resolve, reject) => {
+        img.onload = resolve;
+        img.onerror = () => reject(new Error('ไม่สามารถอ่านรูปภาพได้'));
+        img.src = url;
+      });
+      const scale = Math.min(1, 420 / Math.max(img.naturalWidth, img.naturalHeight));
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.max(1, Math.round(img.naturalWidth * scale));
+      canvas.height = Math.max(1, Math.round(img.naturalHeight * scale));
+      const ctx = canvas.getContext('2d');
+      if (!ctx) throw new Error('เบราว์เซอร์ไม่รองรับการปรับขนาดรูป');
+      ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      return canvas.toDataURL('image/jpeg', 0.55);
+    } finally { URL.revokeObjectURL(url); }
+  }
+
+  // One online review handler. Never permanently disable the submit button on API failure.
+  const submit = el('submitReview');
+  if (submit) {
+    submit.disabled = false;
+    submit.textContent = 'ส่งรีวิว ♡';
+    submit.onclick = async () => {
+      if (submit.disabled) return;
+      const text = el('reviewText').value.trim();
+      if (!text) { alert('กรุณาเขียนข้อความรีวิวก่อนส่งค่ะ'); el('reviewText').focus(); return; }
+      if (text.length > 1000) { alert('ข้อความรีวิวต้องไม่เกิน 1,000 ตัวอักษร'); return; }
+      submit.disabled = true;
+      submit.textContent = 'กำลังส่งรีวิว...';
+      try {
+        const [photo, profile] = await Promise.all([convertImage('reviewPhoto'), convertImage('reviewProfilePhoto')]);
+        const body = {
+          customer: el('reviewCustomer').value.trim().slice(0, 80), text,
+          rating: Math.max(1, Math.min(5, Number(reviewRating) || 5)), photo, profile
+        };
+        const result = await post('reviews', body);
+        if (!result?.review) throw new Error('API ไม่ยืนยันว่าบันทึกรีวิวสำเร็จ');
+        try { await loadReviews(); }
+        catch (e) {
+          console.warn('Review saved but refresh failed', e);
+          addon.reviews.unshift(result.review);
+          refreshReviewUI();
+        }
+        ['reviewCustomer','reviewText','reviewPhoto','reviewProfilePhoto'].forEach(id => {if (el(id)) el(id).value = '';});
+        el('reviewWriteOverlay')?.classList.remove('open');
+        el('reviewLaunch')?.click();
+        alert('ส่งรีวิวสำเร็จค่ะ ♡');
+      } catch (e) {
+        console.error('Review submit:', e);
+        alert('ส่งรีวิวไม่สำเร็จ: ' + (e.message || 'กรุณาลองใหม่'));
+      } finally {
+        submit.disabled = false;
+        submit.textContent = 'ส่งรีวิว ♡';
+      }
+    };
+  }
+
+  el('reviewAdmin')?.addEventListener('click', async event => {
+    const button = event.target.closest('[data-live-delete]');
+    if (!button || !isAdmin || !button.dataset.liveDelete || !confirm('ลบรีวิวนี้?')) return;
+    button.disabled = true;
+    try {
+      await api('reviews/' + encodeURIComponent(button.dataset.liveDelete), {method:'DELETE'});
+      await loadReviews();
+    } catch (e) { alert('ลบรีวิวไม่สำเร็จ: ' + e.message); }
+    finally { button.disabled = false; }
+  });
+  el('reviewLaunch')?.addEventListener('click', renderAdminReviews);
+
+  function saveSite() {
+    if (!isAdmin || loading) return;
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(async () => {
+      try {
+        await put('site', {site:{data, addon:{
+          payments:addon.payments || [], reviewFrame:addon.reviewFrame || '',
+          reviewShape:addon.reviewShape || 'square'
+        }}});
+      } catch (e) { showStatus(e.message, true); }
+    }, 600);
+  }
+  el('editor')?.addEventListener('change', saveSite);
+  el('editor')?.addEventListener('input', saveSite);
+  el('editor')?.addEventListener('click', e => {
+    if (e.target.closest('button')) setTimeout(saveSite, 400);
+  });
+  const login = el('login');
+  if (login) login.onclick = async () => {
+    if (!el('pass').value) { alert('กรุณากรอกรหัสผ่าน'); return; }
+    login.disabled = true;
+    try {
+      await post('login', {password:el('pass').value});
+      isAdmin = true;
+      el('locked').classList.add('hidden');
+      el('editor').classList.remove('hidden');
+      fillEditor(); renderAdminReviews();
+      alert('เข้าสู่ระบบเจ้าของร้านสำเร็จ');
+    } catch (e) { alert('เข้าสู่ระบบไม่สำเร็จ: ' + e.message); }
+    finally { login.disabled = false; }
+  };
+
+  try { activeOrder = JSON.parse(sessionStorage.getItem('mixoy-active-order') || 'null'); }
+  catch { activeOrder = null; }
+  async function loadMessages() {
+    if (!activeOrder) return;
+    try {
+      const result = await api('messages?order=' + encodeURIComponent(activeOrder.id) + '&token=' + encodeURIComponent(activeOrder.token || ''));
+      el('messages').innerHTML = (result.messages || []).map(m =>
+        '<div class="msg ' + (m.sender === 'customer' ? 'mine' : '') + '">' + escapeHtml(m.body) + '</div>'
+      ).join('');
+    } catch (e) { showStatus(e.message, true); }
+  }
+  const checkout = el('checkout');
+  if (checkout) checkout.onclick = async () => {
+    if (!cart.length) { alert('กรุณาเลือกสินค้าก่อน'); return; }
+    checkout.disabled = true;
+    try {
+      const result = await post('orders', {items:cart.map(i => data.products[i]?.name || 'สินค้า')});
+      activeOrder = result;
+      sessionStorage.setItem('mixoy-active-order', JSON.stringify(result));
+      cart = []; renderCart(); show('chat');
+      alert('รับคำสั่งซื้อแล้ว หมายเลขคิว ' + result.id.slice(0, 8));
+      await loadMessages();
+    } catch (e) { alert('สั่งซื้อไม่สำเร็จ: ' + e.message); }
+    finally { checkout.disabled = false; }
+  };
+  const send = el('send');
+  if (send) send.onclick = async () => {
+    const input = el('messageinput'), body = input.value.trim();
+    if (!activeOrder) { alert('กรุณาสั่งซื้อก่อนเริ่มแชท'); return; }
+    if (!body) return;
+    send.disabled = true;
+    try {
+      await post('messages', {order:activeOrder.id, token:activeOrder.token || '', body});
+      input.value = ''; await loadMessages();
+    } catch (e) { alert('ส่งข้อความไม่สำเร็จ: ' + e.message); }
+    finally { send.disabled = false; }
+  };
+  el('messageinput').onkeydown = e => {
+    if (e.key === 'Enter') { e.preventDefault(); send.click(); }
+  };
+  async function loadQueue() {
+    const queue = el('queuelist');
+    if (!isAdmin) {
+      queue.textContent = activeOrder ? 'คิวของคุณ: ' + activeOrder.id.slice(0, 8) : 'กรุณาสั่งซื้อเพื่อรับเลขคิว';
+      return;
+    }
+    try {
+      const result = await api('orders');
+      queue.innerHTML = (result.orders || []).map(o => {
+        let items = [];
+        try { items = JSON.parse(o.items); } catch {}
+        return '<div class="queue"><b>คิว ' + escapeHtml(o.id.slice(0, 8)) + '</b><p>' +
+          escapeHtml(items.join(', ')) + '</p><small>' + escapeHtml(o.status) +
+          '</small><button type="button" class="chip" data-order="' + escapeHtml(o.id) + '">เปิดแชท</button></div>';
+      }).join('');
+      queue.querySelectorAll('[data-order]').forEach(button => button.onclick = () => {
+        activeOrder = {id:button.dataset.order,token:''}; show('chat');
+      });
+    } catch (e) { showStatus(e.message, true); }
+  }
+  const oldShow = window.show;
+  window.show = function (id) {
+    const result = oldShow(id);
+    if (id === 'queue') loadQueue();
+    if (id === 'chat') loadMessages();
+    return result;
+  };
+  setInterval(() => {
+    if (!el('chat').classList.contains('hidden')) loadMessages();
+  }, 8000);
+
+  try {
+    await api('health');
+    const session = await api('session');
+    isAdmin = Boolean(session.admin);
+    const [site, reviews] = await Promise.all([api('site'), api('reviews')]);
+    if (site.site) {
+      Object.assign(data, site.site.data || {});
+      const saved = site.site.addon || {};
+      addon.payments = saved.payments || [];
+      addon.reviewFrame = saved.reviewFrame || '';
+      addon.reviewShape = saved.reviewShape || 'square';
+      render();
+      if (typeof window.drawPayments === 'function') window.drawPayments();
+    }
+    if (Array.isArray(reviews.reviews)) {
+      addon.reviews = reviews.reviews;
+      refreshReviewUI();
+    }
+    if (isAdmin) {
+      el('locked').classList.add('hidden');
+      el('editor').classList.remove('hidden');
+      fillEditor();
+    }
+    renderAdminReviews();
+    showStatus('เชื่อมต่อออนไลน์แล้ว');
+  } catch (e) {
+    console.error('Cloudflare initialization:', e);
+    showStatus('เชื่อมต่อฐานข้อมูลไม่ได้: ' + e.message, true);
+    // Do not lock the review button: let user retry and see the actual API error.
+    if (submit) { submit.disabled = false; submit.textContent = 'ส่งรีวิว ♡'; }
+  } finally { loading = false; }
+})();
+</script>
+ </body>
+</html>
